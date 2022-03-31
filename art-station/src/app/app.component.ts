@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'art-station';
+  title = 'Pixel-Station';
 
-  login:boolean = false;
-  register:boolean = false;
-  about:boolean = false;
+  login: boolean = false;
+  register: boolean = false;
+  about: boolean = false;
 
   showLogin() {
     this.login = true;
