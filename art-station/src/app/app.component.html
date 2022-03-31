@@ -1,10 +1,10 @@
 <div class="toolbar">
-  <button>Login</button>
-  <button>Register</button>
-  <button>About</button>
+  <button (click)="showLogin()">Login</button>
+  <button (click)="showRegister()">Register</button>
+  <button (click)="showAbout()">About</button>
 </div>
 
-<div id="login">
+<div id="login" *ngIf="login">
   <h2>Login</h2>
   <label for="username">Username:</label>
   <input type="text" id="uname" name="username" placeholder="Username"> <br>
@@ -15,7 +15,7 @@
   <input type="submit" value="Login">
 </div>
 
-<div id="register">
+<div id="register" *ngIf="register">
   <h2>Register</h2>
   <label for="username">Username:</label>
   <input type="text" id="uname" name="username" placeholder="Username"> <br>
@@ -29,7 +29,7 @@
   <input type="submit" value="Register">
 </div>
 
-<div id="about">
+<div id="about" *ngIf="about">
   <h2>About</h2>
   <p>This is a social media art sharing site.</p>
 </div>
