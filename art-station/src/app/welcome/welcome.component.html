@@ -1,0 +1,35 @@
+<div class="login-background">
+    <div class="login-zone">
+        <div class="login-form-holder">
+            <h1>Welcome to</h1>
+            <h1>Pixel Station</h1>
+            <p>A Place to Share Art</p>
+
+            <div class="login-button-holder">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link"><button (click)="showLogin()">Login</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><button (click)="showRegister()">Register</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><button (click)="showAbout()">About</button></a>
+                    </li>
+                </ul>
+
+                <div id="login" *ngIf="login">
+                    <app-login (loggedIn) = "Login($event)"></app-login>
+                </div>
+                
+                <div id="register" *ngIf="register">
+                    <app-register></app-register>
+                </div>
+
+                <div id="about" *ngIf="about">
+                    <app-about></app-about>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
