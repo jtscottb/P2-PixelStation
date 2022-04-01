@@ -39,3 +39,27 @@
   translate: 0%, -50%;
   z-index: 1;
 }
+
+button {
+  color: white;
+  padding: 10px;
+  border: none;
+  background: none;
+}
+
+.login-button-holder {
+  display: inline-block;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+input[type="text"],
+textarea,
+input[type="password"],
+textarea,
+input[type="email"],
+textarea {
+  background: none;
+}
