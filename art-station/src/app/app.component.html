@@ -1,10 +1,9 @@
-<div class="login-background">
-  <div class="login-zone">
-    <div class="login-form-holder">
-      
-      <app-welcome></app-welcome>
-      <router-outlet></router-outlet>
-      
-    </div>
-  </div>
+<div *ngIf="welcome">
+  <app-welcome (loggedIn) = "isLoggedIn($event)"></app-welcome>
 </div>
+
+<div *ngIf="dashboard">
+  <app-dashboard></app-dashboard>
+</div>
+
+<router-outlet></router-outlet>

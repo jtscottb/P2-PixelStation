@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Pixel-Station';
+
+  welcome: boolean = true;
+  dashboard: boolean = false;
+  
+  isLoggedIn(status: boolean) {
+    this.welcome = !status;
+    this.dashboard = status;
+  }
 
 }

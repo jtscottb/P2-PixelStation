@@ -1,7 +1,43 @@
+.login-background {
+    background-image: url("/art-station/src/assets/pexels-uzunov-rostislav-5011647.jpg");
+    background-size: 100%;
+    height: 100vh;
+    background-size: cover;
+    z-index: -2;
+}
+
+.login-zone {
+    height: 100vh;
+    width: 25vw;
+    margin-left: 5%;
+    z-index: -1;
+    background-color: grey;
+    background: rgba(0, 0, 0, 0.2);
+
+    filter: blur(0.5px);
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+.login-zone:hover {
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    filter: blur(0px);
+    transition: 0.2s;
+}
+
+.login-form-holder {
+    position: relative;
+    max-width: 25vw;
+    top: 30%;
+    translate: 0%, -50%;
+    z-index: 1;
+}
+
 .login-button-holder {
-display: inline-block;
+    display: inline-block;
 }
 
 .nav-tabs {
-border-bottom: none;
+    border-bottom: none;
 }

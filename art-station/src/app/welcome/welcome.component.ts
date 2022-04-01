@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-welcome',
@@ -30,5 +30,10 @@ export class WelcomeComponent implements OnInit {
     this.login = false;
     this.register = false;
     this.about = true;
+  }
+
+  @Output() loggedIn: EventEmitter<boolean> = new EventEmitter<boolean>();
+  Login(status: boolean) {
+    this.loggedIn.emit(status);
   }
 }
