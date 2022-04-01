@@ -1,5 +1,5 @@
 .login-background {
-    background-image: url("/art-station/src/assets/pexels-uzunov-rostislav-5011647.jpg");
+    background-image: url("./assets/login-background.jpg");
     background-size: 100%;
     height: 100vh;
     background-size: cover;

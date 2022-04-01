@@ -1,11 +1,12 @@
 <h2>Login</h2>
-<form action="" method="get" class="form">
+<form class="form">
     <label for="username">Username:</label><br />
     <input
     type="text"
     id="uname"
     name="username"
     placeholder="Username"
+    #username
     />
     <br />
 
@@ -15,8 +16,9 @@
     id="pword"
     name="password"
     placeholder="Password"
+    #password
     />
     <br /><br />
 
-    <button type="button" class="btn btn-success" (click)="Login()">Login</button>
+    <button type="button" class="btn btn-success" (click)="onSubmit(username.value, password.value)">Login</button>
 </form>

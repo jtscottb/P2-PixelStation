@@ -12,4 +12,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(uname: string, pword: string, email: string) {
+    console.log(uname + " " + pword + " " + email);
+
+    // this.Login();
+  }
+
 }
