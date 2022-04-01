@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+button {
+    color: white;
+    padding: 10px;
+    border: none;
+    background: none;
+}
+
+input[type="text"],
+textarea,
+input[type="password"],
+textarea,
+input[type="email"],
+textarea {
+background: none;
+}
