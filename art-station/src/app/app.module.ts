@@ -12,6 +12,12 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ProfilePictureComponent } from './profile-picture/profile-picture.component';
+import { NavHolderComponent } from './nav-holder/nav-holder.component';
+import { FeaturedArtistBarComponent } from './featured-artist-bar/featured-artist-bar.component';
+import { RandomArtBarComponent } from './random-art-bar/random-art-bar.component';
+import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,13 @@ import { WelcomeComponent } from './welcome/welcome.component';
     LoginComponent,
     RegisterComponent,
     AboutComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AdminDashboardComponent,
+    ProfilePictureComponent,
+    NavHolderComponent,
+    FeaturedArtistBarComponent,
+    RandomArtBarComponent,
+    DashboardHeaderComponent
   ],
   imports: [
     BrowserModule,

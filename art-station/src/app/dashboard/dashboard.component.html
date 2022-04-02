@@ -1,48 +1,10 @@
 <div class="dashboard-content">
-  <div class="dashboard-top-half">
-    <div class="user-section">
-      <div class="header-class">
-        <h1>- Welcome to the Dashboard {{ boi }} -</h1>
-      </div>
-      <div class="profile-pic-border">
-        <img class="profile-pic" src="assets/IMG_1965.JPG" />
-      </div>
-      <div class="nav-holder">
-        <nav class="dashboard-nav-bar">
-          <h5>my profile page</h5>
-          <h5>recommended palettes</h5>
-          <h5>tutorials</h5>
-          <h5>about us</h5>
-        </nav>
-      </div>
-      <div class="tags-bar"></div>
-    </div>
-  </div>
-
+  <app-dashboard-header [boi]="boi"></app-dashboard-header>
+  <app-profile-picture></app-profile-picture>
+  <app-nav-holder></app-nav-holder>
+  <div class="tags-bar"></div>
   <div class="dashboard-bottom-half">
-    <div class="featured-artist-bar">
-      <h3>Our Featured Artist This Week: {{ boi }}</h3>
-      <br />
-      <div class="art-holder-box">
-        <div class="art-holder"></div>
-        <div class="art-holder"></div>
-        <div class="art-holder"></div>
-      </div>
-      <div class="featured-artist-link-holder">
-        <h5>Check out {{ boi }}'s profile page <a href="#">here</a></h5>
-      </div>
-    </div>
-    <div class="random-art-bar">
-      <h3>Here's Some Other Stuff We Think You'd Like</h3>
-      <br />
-      <div class="art-holder-box-2">
-        <div class="art-holder"></div>
-        <div class="art-holder"></div>
-        <div class="art-holder"></div>
-        <div class="art-holder"></div>
-        <div class="art-holder"></div>
-        <div class="art-holder"></div>
-      </div>
-    </div>
+    <app-featured-artist-bar [boi]="boi"></app-featured-artist-bar>
+    <app-random-art-bar></app-random-art-bar>
   </div>
 </div>
