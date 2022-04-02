@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   showMessage: boolean = false;
   onSubmit(uname: string, pword: string) {
     console.log(uname + " " + pword);
-    this.showMessage = true;
+    // this.showMessage = true;
     if(this.showMessage) {
       this.message = 'Invalid username or password. Please try again';
     } else {
