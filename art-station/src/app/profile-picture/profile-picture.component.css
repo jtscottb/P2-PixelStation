@@ -1,0 +1,10 @@
+.profile-pic {
+  display: inline-block;
+  border: 6px solid var(--myaquamarine);
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  background-position: center center;
+  object-fit: cover;
+  margin: 20px;
+}

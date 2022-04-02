@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,9 @@ export class AppComponent {
 
   welcome: boolean = true;
   dashboard: boolean = false;
-  
+
   isLoggedIn(status: boolean) {
     this.welcome = !status;
     this.dashboard = status;
   }
-
 }

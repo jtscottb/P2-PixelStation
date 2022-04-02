@@ -1,0 +1,25 @@
+.random-art-bar {
+  border: 12px solid var(--mycobalt);
+  width: 80vw;
+  margin: auto;
+  border-radius: 40px;
+  padding: 10px;
+  padding-top: 30px;
+}
+
+.art-holder-box-2 {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* THIS '.art-holder' MIGHT BE CHANGED TO JUST IMAGES LATER */
+
+.art-holder {
+  border: 6px solid var(--mycobalt);
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+}
