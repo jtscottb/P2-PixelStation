@@ -1,9 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --mycharcoal: #1f1f1f;
+  --myaquamarine: #26fee0;
+  --mycobalt: #009999;
+  --mypink: #fe1d93;
+  --mygray: #9f9f9f;
+}
+
 button {
-    color: white;
-    padding: 10px;
-    border: none;
-    background: none;
+  color: white;
+  padding: 10px;
+  border: none;
+  background: none;
 }
 
 input[type="text"],
@@ -12,5 +20,5 @@ input[type="password"],
 textarea,
 input[type="email"],
 textarea {
-background: none;
+  background: none;
 }

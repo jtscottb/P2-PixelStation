@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  color: var(--mygray);
+  background-color: var(--mycharcoal);
+}
+
+.dashboard-content {
+  min-height: 100vh;
+  padding-bottom: 200px;
+}
+
+.header-class {
+  padding-top: 30px;
+}
+
+.profile-pic {
+  display: inline-block;
+  border: 6px solid var(--myaquamarine);
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  background-position: center center;
+  object-fit: cover;
+  margin: 20px;
+}
+
+.nav-holder {
+  border: 12px solid var(--mycobalt);
+  width: 85vw;
+  margin: auto;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.dashboard-nav-bar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dashboard-bottom-half {
+  padding-top: 2vh;
+}
+
+.featured-artist-bar {
+  border: 12px solid var(--mycobalt);
+  width: 70vw;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.art-holder-box {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.art-holder-box-2 {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* THIS '.art-holder' MIGHT BE CHANGED TO JUST IMAGES LATER */
+
+.art-holder {
+  border: 6px solid var(--mycobalt);
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.featured-artist-link-holder {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.random-art-bar {
+  border: 12px solid var(--mycobalt);
+  width: 80vw;
+  margin: auto;
+  border-radius: 40px;
+  padding: 10px;
+  padding-top: 30px;
+}
