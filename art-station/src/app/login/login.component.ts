@@ -8,8 +8,7 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(
-    private userService : UserService ) { }
+  constructor(private userService : UserService) { }
 
   ngOnInit(): void {
   }
@@ -19,9 +18,15 @@ export class LoginComponent implements OnInit {
     this.loggedIn.emit(true);
   }
 
+  message: string = '';
+  showMessage: boolean = false;
   onSubmit(uname: string, pword: string) {
     console.log(uname + " " + pword);
-
-    // this.Login();
+    this.showMessage = true;
+    if(this.showMessage) {
+      this.message = 'Invalid username or password. Please try again';
+    } else {
+      this.Login();
+    }
   }
 }
