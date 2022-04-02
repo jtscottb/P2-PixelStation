@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
