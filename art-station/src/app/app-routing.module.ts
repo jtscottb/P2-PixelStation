@@ -10,8 +10,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
-  { path: 'welcome', component: WelcomeComponent },
+  { path: '', component: WelcomeComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
