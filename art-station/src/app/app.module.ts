@@ -18,6 +18,7 @@ import { NavHolderComponent } from './nav-holder/nav-holder.component';
 import { FeaturedArtistBarComponent } from './featured-artist-bar/featured-artist-bar.component';
 import { RandomArtBarComponent } from './random-art-bar/random-art-bar.component';
 import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.co
     NavHolderComponent,
     FeaturedArtistBarComponent,
     RandomArtBarComponent,
-    DashboardHeaderComponent
+    DashboardHeaderComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

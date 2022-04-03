@@ -6,7 +6,6 @@
       <p>A Place to Share Art</p>
 
       <div class="login-button-holder">
-
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <button (click)="showLogin()" class="nav-link">Login</button>
@@ -18,13 +17,24 @@
             <button (click)="showAbout()" class="nav-link">About</button>
           </li>
           <li class="admin">
-            <a routerLink="/admin" routerLinkActive="active" class="nav-link">Admin Login</a>
+            <a routerLink="/admin" routerLinkActive="active" class="nav-link"
+              >Admin Login</a
+            >
           </li>
           <li class="dashboard">
-            <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">Dashboard</a>
+            <a
+              routerLink="/dashboard"
+              routerLinkActive="active"
+              class="nav-link"
+              >Dashboard</a
+            >
+          </li>
+          <li class="post">
+            <a routerLink="/post" routerLinkActive="active" class="nav-link"
+              >Post Object</a
+            >
           </li>
         </ul>
-
       </div>
 
       <div *ngIf="login">
@@ -38,7 +48,6 @@
       <div *ngIf="about">
         <app-about></app-about>
       </div>
-
     </div>
   </div>
 </div>
