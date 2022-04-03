@@ -1,27 +1,28 @@
 <h2>Login</h2>
-<p class="text-danger">{{message}}</p>
+<p class="text-danger">{{ message }}</p>
 <form class="form">
-    <label for="username">Username:</label><br />
-    <input
+  <label for="username">Username:</label><br />
+  <input
     type="text"
     id="uname"
     name="username"
     placeholder="Username"
     required
     #username
-    />
-    <br />
+  />
+  <br />
 
-    <label for="password">Password:</label><br />
-    <input
+  <label for="password">Password:</label><br />
+  <input
     type="password"
     id="pword"
     name="password"
     placeholder="Password"
     required
     #password
-    />
-    <br /><br />
+  />
+  <br /><br />
 
-    <button type="button" class="btn btn-success" (click)="onSubmit(username.value, password.value)">Login</button>
+  <!-- <button type="button" class="btn btn-success" (click)="onSubmit(username.value, password.value)">Login</button> -->
+  <a routerLink="/dashboard" routerLinkActive="active">Login</a>
 </form>

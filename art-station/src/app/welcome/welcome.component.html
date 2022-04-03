@@ -1,35 +1,53 @@
 <div class="login-background">
-    <div class="login-zone">
-        <div class="login-form-holder">
-            <h1>Welcome to</h1>
-            <h1>Pixel Station</h1>
-            <p>A Place to Share Art</p>
+  <div class="login-zone">
+    <div class="login-form-holder">
+      <h1>Welcome to</h1>
+      <h1>Pixel Station</h1>
+      <p>A Place to Share Art</p>
 
-            <div class="login-button-holder">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link"><button (click)="showLogin()">Login</button></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"><button (click)="showRegister()">Register</button></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"><button (click)="showAbout()">About</button></a>
-                    </li>
-                </ul>
+      <div class="login-button-holder">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button (click)="showLogin()" class="nav-link">Login</button>
+          </li>
+          <li class="nav-item">
+            <button (click)="showRegister()" class="nav-link">Register</button>
+          </li>
+          <li class="nav-item">
+            <button (click)="showAbout()" class="nav-link">About</button>
+          </li>
+          <li class="admin">
+            <a routerLink="/admin" routerLinkActive="active" class="nav-link"
+              >Admin Login</a
+            >
+          </li>
+          <li class="dashboard">
+            <a
+              routerLink="/dashboard"
+              routerLinkActive="active"
+              class="nav-link"
+              >Dashboard</a
+            >
+          </li>
+          <li class="post">
+            <a routerLink="/post" routerLinkActive="active" class="nav-link"
+              >Post Object</a
+            >
+          </li>
+        </ul>
+      </div>
 
-                <div id="login" *ngIf="login">
-                    <app-login (loggedIn) = "Login($event)"></app-login>
-                </div>
-                
-                <div id="register" *ngIf="register">
-                    <app-register></app-register>
-                </div>
+      <div *ngIf="login">
+        <app-login></app-login>
+      </div>
 
-                <div id="about" *ngIf="about">
-                    <app-about></app-about>
-                </div>
-            </div>
-        </div>
+      <div *ngIf="register">
+        <app-register></app-register>
+      </div>
+
+      <div *ngIf="about">
+        <app-about></app-about>
+      </div>
     </div>
+  </div>
 </div>
