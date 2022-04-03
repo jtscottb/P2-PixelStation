@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,18 +13,19 @@ export class LoginComponent implements OnInit {
   showUnameMessage: boolean = false;
   showPwordMessage: boolean = false;
   user = {
-    username: null,
-    password: null
+    fname: '',
+    lname: '',
+    username: '',
+    password: '',
+    email: ''
   };
 
-  constructor(private userService : UserService) { }
+  constructor(
+    private userService : UserService,
+    private route : Router
+    ) { }
 
   ngOnInit(): void { }
-
-  @Output() loggedIn: EventEmitter<boolean> = new EventEmitter<boolean>();
-  Login() {
-    this.loggedIn.emit(true);
-  }
 
   onSubmit(uname: string, pword: string) {
     this.showMessage = false;
@@ -35,11 +37,15 @@ export class LoginComponent implements OnInit {
     } else if(pword == '') {
       this.showPwordMessage = true;
       this.message = 'You must provide a password';
-    } else if(this.user.username == null) {
-      this.showMessage = true;
-      this.message =  'Invalid username or password. Please try again.';
     } else {
-      this.Login();
+      // this.userService.getUser(uname, pword)
+      // this.user.username = 'test_name';
+      if(this.user.username.toString() === '') {
+        this.showMessage = true;
+        this.message =  'Invalid username or password. Please try again';
+      } else {
+        this.route.navigate(['/dashboard']);
+      }
     }
   }
 }
