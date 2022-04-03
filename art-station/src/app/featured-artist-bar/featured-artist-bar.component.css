@@ -1,0 +1,27 @@
+.featured-artist-bar {
+  border: 12px solid var(--mycobalt);
+  width: 70vw;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+/* THIS '.art-holder' MIGHT BE CHANGED TO JUST IMAGES LATER */
+
+.art-holder-box {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.art-holder {
+  border: 6px solid var(--mycobalt);
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.featured-artist-link-holder {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}

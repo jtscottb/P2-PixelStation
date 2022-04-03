@@ -12,7 +12,12 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { UsersComponent } from './users/users.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ProfilePictureComponent } from './profile-picture/profile-picture.component';
+import { NavHolderComponent } from './nav-holder/nav-holder.component';
+import { FeaturedArtistBarComponent } from './featured-artist-bar/featured-artist-bar.component';
+import { RandomArtBarComponent } from './random-art-bar/random-art-bar.component';
+import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
@@ -23,7 +28,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     RegisterComponent,
     AboutComponent,
     WelcomeComponent,
-    UsersComponent,
+    AdminDashboardComponent,
+    ProfilePictureComponent,
+    NavHolderComponent,
+    FeaturedArtistBarComponent,
+    RandomArtBarComponent,
+    DashboardHeaderComponent,
     UserProfileComponent
   ],
   imports: [
