@@ -2,63 +2,74 @@
 <p [class]="text" *ngIf="showMessage">{{ message }}</p>
 <form class="form">
     <label for="username">Username:</label><br />
-    <p class="text-danger" *ngIf="showUnameMessage">{{ message }}</p>
+    <p class="text-danger" *ngIf="username.invalid && (username.dirty || username.touched) || showUnameMessage">Username is required</p>
     <input
     type="text"
     id="uname"
+    name="uname"
     placeholder="Username"
-    #username
+    [(ngModel)]="uname"
+    #username="ngModel"
     required
     />
     <br />
 
     <label for="password">Password:</label><br />
-    <p class="text-danger" *ngIf="showPwordMessage">{{ message }}</p>
+    <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+        <p *ngIf="password.errors?.['required']">Password is required</p>
+        <p *ngIf="password.errors?.['minlength']">Password must be 4 characters minumum</p>
+    </div>
+    <p class="text-danger" *ngIf="showPwordMessage">Password is required</p>
     <input
     type="password"
     id="pword"
-    name="password"
+    name="pword"
     placeholder="Password"
-    #password
     required
+    minlength="4"
+    [(ngModel)]="pword"
+    #password="ngModel"
     />
     <br />
 
     <label for="fname">First Name:</label><br />
-    <p class="text-danger" *ngIf="showFnameMessage">{{ message }}</p>
+    <p class="text-danger" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched) || showFnameMessage">First name is required</p>
     <input
     type="text"
     id="fname"
     name="fname"
     placeholder="First Name"
-    #fname
     required
+    [(ngModel)]="fname"
+    #firstName="ngModel"
     />
     <br />
 
     <label for="lname">Last Name:</label><br />
-    <p class="text-danger" *ngIf="showLnameMessage">{{ message }}</p>
+    <p class="text-danger" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched) || showLnameMessage">Last name is required</p>
     <input
     type="text"
     id="lname"
     name="lname"
     placeholder="Last Name"
-    #lname
     required
+    [(ngModel)]="lname"
+    #lastName="ngModel"
     />
     <br />
 
     <label for="email">Email:</label><br />
-    <p class="text-danger" *ngIf="showEmailMessage">{{ message }}</p>
+    <p class="text-danger" *ngIf="Email.invalid && (Email.dirty || Email.touched) || showEmailMessage">Enter a valid Email</p>
     <input
     type="email"
     id="email"
     name="email"
     placeholder="user@email.com"
-    #email
     required
+    [(ngModel)]="email"
+    #Email="ngModel"
     />
     <br /><br />
 
-    <button type="button" class="btn btn-success" (click)="onSubmit(username.value, password.value, fname.value, lname.value, email.value)">Register</button>
+    <button type="button" class="btn btn-success" (click)="onSubmit()">Register</button>
 </form>

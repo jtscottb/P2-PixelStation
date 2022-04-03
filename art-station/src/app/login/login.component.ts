@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 
@@ -8,17 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  message: string = '';
   showMessage: boolean = false;
   showUnameMessage: boolean = false;
   showPwordMessage: boolean = false;
-  user = {
-    fname: '',
-    lname: '',
-    username: '',
-    password: '',
-    email: ''
-  };
+  uname: string = '';
+  pword: string = '';
 
   constructor(
     private userService : UserService,
@@ -27,22 +21,27 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  onSubmit(uname: string, pword: string) {
+  onSubmit() {
     this.showMessage = false;
     this.showUnameMessage = false;
     this.showPwordMessage = false;
-    if(uname == '') {
+    if(this.uname == '') {
       this.showUnameMessage = true;
-      this.message = 'You must provide a username';
-    } else if(pword == '') {
+    }
+    if(this.pword == '') {
       this.showPwordMessage = true;
-      this.message = 'You must provide a password';
     } else {
+      var user = {
+        fname: '',
+        lname: '',
+        username: '',
+        password: this.pword,
+        email: ''
+      };
       // this.userService.getUser(uname, pword)
       // this.user.username = 'test_name';
-      if(this.user.username.toString() === '') {
+      if(user.username.toString() === '') {
         this.showMessage = true;
-        this.message =  'Invalid username or password. Please try again';
       } else {
         this.route.navigate(['/dashboard']);
       }

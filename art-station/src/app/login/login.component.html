@@ -1,30 +1,31 @@
 <h2>Login</h2>
-<p class="text-danger" *ngIf="showMessage">{{ message }}</p>
+<p class="text-danger" *ngIf="showMessage">Invalid username or password. Please try again</p>
 <form class="form">
   <label for="username">Username:</label><br />
-  <p class="text-danger" *ngIf="showUnameMessage">{{ message }}</p>
+  <p class="text-danger" *ngIf="username.invalid && (username.dirty || username.touched) || showUnameMessage">Username is required</p>
   <input
     type="text"
     id="uname"
-    name="username"
+    name="uname"
     placeholder="Username"
     required
-    #username
+    [(ngModel)]="uname"
+    #username="ngModel"
   />
   <br />
 
   <label for="password">Password:</label><br />
-  <p class="text-danger" *ngIf="showPwordMessage">{{ message }}</p>
+  <p class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched) || showPwordMessage">Password is required</p>
   <input
     type="password"
     id="pword"
-    name="password"
+    name="pword"
     placeholder="Password"
-    required
-    #password
+    [(ngModel)]="pword"
+    #password="ngModel"
   />
   <br /><br />
 
-  <button type="button" class="btn btn-success" (click)="onSubmit(username.value, password.value)">Login</button>
+  <button type="button" class="btn btn-success" (click)="onSubmit()">Login</button>
   <!-- <a routerLink="/dashboard" routerLinkActive="active">Login</a> -->
 </form>
