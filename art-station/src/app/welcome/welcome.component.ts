@@ -31,9 +31,4 @@ export class WelcomeComponent implements OnInit {
     this.register = false;
     this.about = true;
   }
-
-  @Output() loggedIn: EventEmitter<boolean> = new EventEmitter<boolean>();
-  Login(status: boolean) {
-    this.loggedIn.emit(status);
-  }
 }
