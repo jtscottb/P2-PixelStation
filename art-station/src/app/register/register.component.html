@@ -1,7 +1,8 @@
 <h2>Register</h2>
-<p class="text-danger">{{message}}</p>
+<p class="text-danger" *ngIf="showMessage">{{ message }}</p>
 <form class="form">
     <label for="username">Username:</label><br />
+    <p class="text-danger" *ngIf="showUnameMessage">{{ message }}</p>
     <input
     type="text"
     id="uname"
@@ -12,6 +13,7 @@
     <br />
 
     <label for="password">Password:</label><br />
+    <p class="text-danger" *ngIf="showPwordMessage">{{ message }}</p>
     <input
     type="password"
     id="pword"
@@ -22,7 +24,32 @@
     />
     <br />
 
+    <label for="fname">First Name:</label><br />
+    <p class="text-danger" *ngIf="showFnameMessage">{{ message }}</p>
+    <input
+    type="text"
+    id="fname"
+    name="fname"
+    placeholder="First Name"
+    #fname
+    required
+    />
+    <br />
+
+    <label for="lname">Last Name:</label><br />
+    <p class="text-danger" *ngIf="showLnameMessage">{{ message }}</p>
+    <input
+    type="text"
+    id="lname"
+    name="lname"
+    placeholder="Last Name"
+    #lname
+    required
+    />
+    <br />
+
     <label for="email">Email:</label><br />
+    <p class="text-danger" *ngIf="showEmailMessage">{{ message }}</p>
     <input
     type="email"
     id="email"
@@ -33,5 +60,5 @@
     />
     <br /><br />
 
-    <button type="button" class="btn btn-success" (click)="onSubmit(username.value, password.value, email.value)">Register</button>
+    <button type="button" class="btn btn-success" (click)="onSubmit(username.value, password.value, fname.value, lname.value, email.value)">Register</button>
 </form>
