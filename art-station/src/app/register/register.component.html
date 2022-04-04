@@ -15,11 +15,10 @@
     <br />
 
     <label for="password">Password:</label><br />
-    <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+    <div class="text-danger" *ngIf= "showPwordMessage || (password.dirty || password.touched)">
         <p *ngIf="password.errors?.['required']">Password is required</p>
         <p *ngIf="password.errors?.['minlength']">Password must be 4 characters minumum</p>
     </div>
-    <p class="text-danger" *ngIf="showPwordMessage">Password is required</p>
     <input
     type="password"
     id="pword"

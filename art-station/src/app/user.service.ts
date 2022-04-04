@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  User = {
+    username: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    email: ''
+  };
 
   constructor() { }
 
@@ -15,4 +22,10 @@ export class UserService {
   getUser(uname: string, pword: string) { }
 
   addUser(User: Object) { }
+
+  setUser(user: any) {
+    this.User = user;
+    console.log(this.User);
+  }
+
 }
