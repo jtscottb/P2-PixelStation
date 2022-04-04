@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanDeactivate, CanLoad, Route, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanDeactivate, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserService } from '../services/user.service';
 
@@ -8,12 +8,20 @@ import { UserService } from '../services/user.service';
 })
 export class AdminGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private route: Router
+    ) { }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.userService.User.role == 'admin';
+      if(this.userService.User.role == 'admin') {
+        return true;
+      } else {
+        this.route.navigate(['/welcome']);
+      }
+      return false;
   }
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
