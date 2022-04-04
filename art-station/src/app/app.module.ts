@@ -18,7 +18,11 @@ import { NavHolderComponent } from './nav-holder/nav-holder.component';
 import { FeaturedArtistBarComponent } from './featured-artist-bar/featured-artist-bar.component';
 import { RandomArtBarComponent } from './random-art-bar/random-art-bar.component';
 import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
+import { PostComponent } from './post/post.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileNavComponent } from './user-profile-nav/user-profile-nav.component';
+import { UserProfileGalleryComponent } from './user-profile-gallery/user-profile-gallery.component';
+import { UserProfilePostComponent } from './user-profile-post/user-profile-post.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     FeaturedArtistBarComponent,
     RandomArtBarComponent,
     DashboardHeaderComponent,
-    UserProfileComponent
+    PostComponent,
+    UserProfileNavComponent,
+    UserProfileComponent,
+    UserProfileGalleryComponent,
+    UserProfilePostComponent
   ],
   imports: [
     BrowserModule,

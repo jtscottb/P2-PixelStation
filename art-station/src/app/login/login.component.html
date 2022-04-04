@@ -1,7 +1,8 @@
 <h2>Login</h2>
-<p class="text-danger">{{ message }}</p>
+<p class="text-danger" *ngIf="showMessage">{{ message }}</p>
 <form class="form">
   <label for="username">Username:</label><br />
+  <p class="text-danger" *ngIf="showUnameMessage">{{ message }}</p>
   <input
     type="text"
     id="uname"
@@ -13,6 +14,7 @@
   <br />
 
   <label for="password">Password:</label><br />
+  <p class="text-danger" *ngIf="showPwordMessage">{{ message }}</p>
   <input
     type="password"
     id="pword"
@@ -23,6 +25,6 @@
   />
   <br /><br />
 
-  <!-- <button type="button" class="btn btn-success" (click)="onSubmit(username.value, password.value)">Login</button> -->
-  <a routerLink="/dashboard" routerLinkActive="active">Login</a>
+  <button type="button" class="btn btn-success" (click)="onSubmit(username.value, password.value)">Login</button>
+  <!-- <a routerLink="/dashboard" routerLinkActive="active">Login</a> -->
 </form>

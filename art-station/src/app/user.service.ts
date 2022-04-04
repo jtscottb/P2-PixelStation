@@ -8,7 +8,11 @@ export class UserService {
 
   constructor() { }
 
-  getUserArt() { }
+  getUserArt(username: string) { }
 
   getArt() { }
+
+  getUser(uname: string, pword: string) { }
+
+  addUser(User: Object) { }
 }
