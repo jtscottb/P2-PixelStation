@@ -1,8 +1,9 @@
 .featured-artist-bar {
-  border: 12px solid var(--mycobalt);
+  border: 12px solid #51a59f;
+  background-color: #62c8c0;
   width: 70vw;
   margin: auto;
-  margin-bottom: 30px;
+
   border-radius: 40px;
   padding: 10px;
 }

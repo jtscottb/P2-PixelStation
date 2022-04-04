@@ -1,10 +1,12 @@
 .random-art-bar {
-  border: 12px solid var(--mycobalt);
+  border: 12px solid #ed308f;
+  background-color: #ff83ae;
   width: 80vw;
   margin: auto;
   border-radius: 40px;
   padding: 10px;
   padding-top: 30px;
+  z-index: 3;
 }
 
 .art-holder-box-2 {
