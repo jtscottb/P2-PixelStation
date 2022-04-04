@@ -9,6 +9,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { PostComponent } from './post/post.component';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'admin', component: AdminDashboardComponent },
   { path: 'post', component: PostComponent },
+  { path: 'user-profile', component: UserProfileComponent }
 ];
 
 @NgModule({

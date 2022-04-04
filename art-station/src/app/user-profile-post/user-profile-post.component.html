@@ -1,0 +1,33 @@
+<!-- <section id="contact">
+    <div class="container">
+        <h3>New Post</h3>
+
+        <form action="https://mailthis.to/slojamz@yahoo.com" method="POST">
+            <fieldset>
+                <input type="text" name="name" placeholder="Enter Pic Title..." />
+                <textarea name="message" placeholder="Enter your message..."></textarea>
+                <button>Send</button>
+                <input type="hidden" name="_confirmation" value="Your form has been submitted!" />
+            </fieldset>
+        </form>
+    </div>
+</section> -->
+
+<div>
+    <label for="new-post">New Post: </label>
+    <!-- upload pic -->
+    <textarea name="new-post" placeholder="Enter your message..." #post></textarea>
+    <button type="button" class="post-button" (click)="add(); post.value = ''">
+    Post
+  </button>
+</div>
+
+<!-- <ul class="posts">
+    <li *ngFor="let post of posts">
+        <a routerLink="/post/{{ post.id }}">
+            <span class="badge">{{ post.id }}</span> {{ post.name }}
+        </a>
+        <button type="button" class="delete" title="delete post" (click)="delete(post)">
+      Delete</button>
+    </li>
+</ul> -->

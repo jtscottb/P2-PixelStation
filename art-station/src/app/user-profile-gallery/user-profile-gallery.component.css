@@ -1,0 +1,21 @@
+#gallery {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.gallery-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+}
+
+.gallery-item {
+    flex: 1;
+    flex-basis: 33%;
+}
+
+.gallery-description {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
