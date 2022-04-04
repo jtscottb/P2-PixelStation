@@ -10,7 +10,8 @@ export class UserService {
     password: '',
     firstName: '',
     lastName: '',
-    email: ''
+    email: '',
+    role: ''
   };
 
   constructor() { }
@@ -21,11 +22,10 @@ export class UserService {
 
   getUser(uname: string, pword: string) { }
 
-  addUser(User: Object) { }
+  addUser(User: any) { }
 
   setUser(user: any) {
     this.User = user;
-    console.log(this.User);
   }
 
 }
