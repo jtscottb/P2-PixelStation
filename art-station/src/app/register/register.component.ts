@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -53,19 +53,18 @@ export class RegisterComponent implements OnInit {
       password: this.pword,
       firstName: this.fname,
       lastName: this.lname,
-      email: this.email
+      email: this.email,
+      role: ''
     }
     // this.userService.addUser(user);
     if(this.showMessage) {
       this.showMessage = true;
       this.text = 'text-success';
       this.message = 'Successfully Registered. Please Login';
-    } else {
-      if(!booleans.includes(true)) {
-        this.showMessage = true;
-        this.text = 'text-danger';
-        this.message = 'Username is already taken.';
-      }
+    } else if(!booleans.includes(true)) {
+      this.showMessage = true;
+      this.text = 'text-danger';
+      this.message = 'Username is already taken.';
     }
   }
 

@@ -23,6 +23,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserProfileNavComponent } from './user-profile-nav/user-profile-nav.component';
 import { UserProfileGalleryComponent } from './user-profile-gallery/user-profile-gallery.component';
 import { UserProfilePostComponent } from './user-profile-post/user-profile-post.component';
+import { UserService } from './services/user.service';
+import { AuthenticationGuard } from './route-guard/authentication.guard';
+import { AdminGuard } from './route-guard/admin.guard';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,7 @@ import { UserProfilePostComponent } from './user-profile-post/user-profile-post.
     FormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [UserService, AuthenticationGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 

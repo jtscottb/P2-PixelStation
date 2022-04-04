@@ -21,11 +21,11 @@
     id="pword"
     name="pword"
     placeholder="Password"
+    required
     [(ngModel)]="pword"
     #password="ngModel"
   />
   <br /><br />
 
   <button type="button" class="btn btn-success" (click)="onSubmit()">Login</button>
-  <!-- <a routerLink="/dashboard" routerLinkActive="active">Login</a> -->
 </form>

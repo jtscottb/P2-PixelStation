@@ -10,14 +10,17 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { PostComponent } from './post/post.component';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AuthenticationGuard } from './route-guard/authentication.guard';
+import { AdminGuard } from './route-guard/admin.guard';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'welcome', component: WelcomeComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard] },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'admin', component: AdminDashboardComponent },
+  { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard] },
   { path: 'post', component: PostComponent },
   { path: 'user-profile', component: UserProfileComponent }
 ];
