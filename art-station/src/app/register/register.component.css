@@ -1,6 +1,16 @@
 button {
-    color: white;
-    padding: 10px;
-    border: none;
-    background: none;
+  background-color: var(--mypink);
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: white;
+  color: var(--mypink);
+  transition: 0.2s;
+  transform: scale3d(1.1, 1.1, 1.1);
 }

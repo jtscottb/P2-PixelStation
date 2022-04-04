@@ -1,3 +1,11 @@
+* {
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
 .login-background {
   background-image: url("./assets/login-background.jpg");
   background-size: 100%;
@@ -35,7 +43,19 @@
 }
 
 .login-button-holder {
+  padding: 20px;
   display: inline-block;
+}
+
+.nav-link {
+  display: flex;
+  margin: 8px;
+  padding: 4px;
+}
+
+.nav-link:hover {
+  background: white;
+  color: black;
 }
 
 .nav-tabs {
