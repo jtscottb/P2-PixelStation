@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 
@@ -8,15 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  message: string = '';
   showMessage: boolean = false;
   showUnameMessage: boolean = false;
   showPwordMessage: boolean = false;
+  uname: string = '';
+  pword: string = '';
+
   user = {
-    fname: '',
-    lname: '',
+    firstName: '',
+    lastName: '',
     username: '',
-    password: '',
+    password: this.pword,
     email: ''
   };
 
@@ -25,27 +27,29 @@ export class LoginComponent implements OnInit {
     private route : Router
     ) { }
 
-  ngOnInit(): void { }
+  ngOnInit() { }
 
-  onSubmit(uname: string, pword: string) {
+  onSubmit() {
     this.showMessage = false;
     this.showUnameMessage = false;
     this.showPwordMessage = false;
-    if(uname == '') {
+    if(this.uname == '') {
       this.showUnameMessage = true;
-      this.message = 'You must provide a username';
-    } else if(pword == '') {
+    }
+    if(this.pword == '') {
       this.showPwordMessage = true;
-      this.message = 'You must provide a password';
-    } else {
-      // this.userService.getUser(uname, pword)
-      // this.user.username = 'test_name';
-      if(this.user.username.toString() === '') {
+    }
+    var booleans = [this.showUnameMessage, this.showPwordMessage];
+    // this.userService.getUser(uname, pword)
+    // this.user.username = 'test_name';
+    if(this.user.username.toString() === '') {
+      if(!booleans.includes(true)) {
         this.showMessage = true;
-        this.message =  'Invalid username or password. Please try again';
-      } else {
-        this.route.navigate(['/dashboard']);
       }
+    } else {
+      this.userService.setUser(this.user);
+      this.route.navigate(['/dashboard']);
     }
   }
+
 }

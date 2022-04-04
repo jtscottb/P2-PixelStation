@@ -1,4 +1,4 @@
-import { Component, OnInit, Type } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 
 @Component({
@@ -15,47 +15,53 @@ export class RegisterComponent implements OnInit {
   showFnameMessage: boolean = false;
   showLnameMessage: boolean = false;
   showEmailMessage: boolean = false;
+  uname: string = '';
+  pword: string = '';
+  fname: string = '';
+  lname: string = '';
+  email: string = '';
 
   constructor(private userService : UserService) { }
   
   ngOnInit(): void { }
 
-  onSubmit(uname: string, pword: string, fname: string, lname: string, email: string) {
+  onSubmit() {
     this.showMessage = false;
     this.showUnameMessage = false;
     this.showPwordMessage = false;
     this.showFnameMessage = false;
     this.showLnameMessage = false;
     this.showEmailMessage = false;
-    if(uname == '') {
+    if(this.uname == '') {
       this.showUnameMessage = true;
-      this.message = 'You must enter a username';
-    } else if(pword == '') {
+    }
+    if(this.pword == '') {
       this.showPwordMessage = true;
-      this.message = 'You must enter a password';
-    } else if(fname == '') {
+    }
+    if(this.fname == '') {
       this.showFnameMessage = true;
-      this.message = 'You must enter a first name';
-    } else if(lname == '') {
+    }
+    if(this.lname == '') {
       this.showLnameMessage = true;
-      this.message = 'You must enter a last name';
-    } else if(email == '') {
+    }
+    if(this.email == '') {
       this.showEmailMessage = true;
-      this.message = 'You must enter an email';
+    }
+    var booleans = [this.showUnameMessage, this.showPwordMessage, this.showFnameMessage, this.showLnameMessage, this.showEmailMessage];
+    var user = {
+      username: this.uname,
+      password: this.pword,
+      firstName: this.fname,
+      lastName: this.lname,
+      email: this.email
+    }
+    // this.userService.addUser(user);
+    if(this.showMessage) {
+      this.showMessage = true;
+      this.text = 'text-success';
+      this.message = 'Successfully Registered. Please Login';
     } else {
-      var user = {
-        username: uname,
-        password: pword,
-        firstName: fname,
-        lastName: lname,
-        email: email
-      }
-      // this.userService.addUser(user);
-      if(!this.showMessage) {
-        this.showMessage = true;
-        this.text = 'text-success';
-        this.message = 'Successfully Registered. Please Login';
-      } else {
+      if(!booleans.includes(true)) {
         this.showMessage = true;
         this.text = 'text-danger';
         this.message = 'Username is already taken.';
