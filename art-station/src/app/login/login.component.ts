@@ -14,12 +14,20 @@ export class LoginComponent implements OnInit {
   uname: string = '';
   pword: string = '';
 
+  user = {
+    firstName: '',
+    lastName: '',
+    username: '',
+    password: this.pword,
+    email: ''
+  };
+
   constructor(
     private userService : UserService,
     private route : Router
     ) { }
 
-  ngOnInit(): void { }
+  ngOnInit() { }
 
   onSubmit() {
     this.showMessage = false;
@@ -30,21 +38,18 @@ export class LoginComponent implements OnInit {
     }
     if(this.pword == '') {
       this.showPwordMessage = true;
-    } else {
-      var user = {
-        fname: '',
-        lname: '',
-        username: '',
-        password: this.pword,
-        email: ''
-      };
-      // this.userService.getUser(uname, pword)
-      // this.user.username = 'test_name';
-      if(user.username.toString() === '') {
+    }
+    var booleans = [this.showUnameMessage, this.showPwordMessage];
+    // this.userService.getUser(uname, pword)
+    // this.user.username = 'test_name';
+    if(this.user.username.toString() === '') {
+      if(!booleans.includes(true)) {
         this.showMessage = true;
-      } else {
-        this.route.navigate(['/dashboard']);
       }
+    } else {
+      this.userService.setUser(this.user);
+      this.route.navigate(['/dashboard']);
     }
   }
+
 }
