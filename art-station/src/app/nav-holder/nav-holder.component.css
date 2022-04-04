@@ -1,8 +1,9 @@
 .nav-holder {
-  border: 12px solid var(--mycobalt);
+  border: 12px solid #e9aa2c;
+  background-color: #fee998;
   width: 85vw;
   margin: auto;
-  border-radius: 40px;
+  border-radius: 4px;
   padding: 10px;
 }
 

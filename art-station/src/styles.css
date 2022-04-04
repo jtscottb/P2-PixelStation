@@ -23,3 +23,7 @@ textarea {
   background: none;
   color: white;
 }
+
+::placeholder {
+  color: white;
+}

@@ -3,15 +3,68 @@
   padding: 0;
   box-sizing: border-box;
   text-align: center;
-  color: var(--mygray);
-  background-color: var(--mycharcoal);
+  color: white;
+  background-color: #053158;
 }
 
 .dashboard-content {
   min-height: 100vh;
-  padding-bottom: 200px;
 }
 
-.dashboard-bottom-half {
-  padding-top: 2vh;
+.wave .wave2 .wave3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
 }
+
+.wave .wave2 .wave3 svg {
+  position: relative;
+  display: block;
+  width: calc(140% + 1.3px);
+  height: 288px;
+}
+
+.wave .shape-fill {
+  fill: #053158;
+}
+.wave2 .shape-fill {
+  fill: #914b79;
+}
+.wave3 .shape-fill {
+  fill: #fea38e;
+}
+
+.curve-divider-pink {
+  background-color: #053158;
+}
+
+.curve-divider-blue {
+  background-color: #914b79;
+}
+
+.curve-divider-yellow {
+  background-color: #fea38e;
+}
+
+.svg-1 {
+  background-color: #914b79;
+}
+
+.svg-2 {
+  background-color: #fea38e;
+}
+
+/* 
+
+#053158; (darkblue)
+#02809a; (lighter blue)
+#914b79; (lavender)
+#f64a80; (lighter pink)
+#fea38e (brownish orange)
+#fdc7ad (lighter brown) 
+
+*/
