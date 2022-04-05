@@ -1,13 +1,37 @@
 .nav-holder {
-  border: 12px solid #e9aa2c;
-  background-color: #fee998;
+  background-color: var(--mytan);
   width: 85vw;
   margin: auto;
   border-radius: 4px;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 4px;
 }
 
 .dashboard-nav-bar {
   display: flex;
   justify-content: space-around;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--mydarkblue);
+  background-color: var(--mybrown);
+  border: 2px solid var(--mylavender);
+  border-radius: 8px;
+  transition: 0.2s;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 14px;
+}
+
+a:hover {
+  color: var(--mybrown);
+  background-color: var(--mydarkblue);
+  border-color: var(--mydarkblue);
+  transform: scale3d(1.1, 1.1, 1.1);
+  transition: 0.2s;
 }

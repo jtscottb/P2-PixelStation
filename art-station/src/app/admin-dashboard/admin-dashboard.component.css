@@ -3,8 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   text-align: center;
-  color: var(--mygray);
-  background-color: var(--mycharcoal);
+  color: white;
+  background-color: var(--mytan);
 }
 
 .admin-dashboard-content {
@@ -18,7 +18,8 @@
 }
 
 .admin-buttons-holder {
-  border: 12px solid var(--mycobalt);
+  border: 12px solid var(--mydarkblue);
+  background-color: var(--mydarkblue);
   width: 90vw;
   margin: auto;
   margin-bottom: 30px;
@@ -32,10 +33,29 @@
 }
 
 .admin-button {
-  border: 6px solid var(--mycobalt);
-  background-color: var(--mycobalt);
   border-radius: 10px;
   width: 500px;
   height: 300px;
   padding-top: 20px;
+  transition: 0.5s;
+}
+
+.to-do-list {
+  background-color: var(--mylightblue);
+  color: var(--mycharcoal);
+}
+
+.admin-control {
+  background-color: var(--mypink);
+  color: white;
+}
+
+.view-user-info {
+  background-color: var(--mylavender);
+  color: var(--mydarkblue);
+}
+
+.admin-button:hover {
+  transform: scaleY(10px);
+  transition: 0.5s;
 }
