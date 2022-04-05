@@ -49,15 +49,15 @@ export class RegisterComponent implements OnInit {
     }
     var booleans = [this.showUnameMessage, this.showPwordMessage, this.showFnameMessage, this.showLnameMessage, this.showEmailMessage];
     var user = {
-      username: this.uname,
+      username: this.uname.toUpperCase(),
       password: this.pword,
-      firstName: this.fname,
-      lastName: this.lname,
+      firstName: this.fname.toUpperCase(),
+      lastName: this.lname.toUpperCase(),
       email: this.email,
       role: ''
     }
-    // this.userService.addUser(user);
-    if(this.showMessage) {
+    var success: boolean = this.userService.addUser(user);
+    if(success) {
       this.showMessage = true;
       this.text = 'text-success';
       this.message = 'Successfully Registered. Please Login';
