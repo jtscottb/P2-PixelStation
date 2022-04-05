@@ -1,10 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
   --mycharcoal: #1f1f1f;
-  --myaquamarine: #26fee0;
-  --mycobalt: #009999;
-  --mypink: #fe1d93;
   --mygray: #9f9f9f;
+  --mydarkblue: #053158;
+  --mydarkblue2: #004d85;
+  --mylightblue: #98c4f2;
+  --mylavender: #914b79;
+  --mypalepink: #ffaec8;
+  --mypink: #f64a80;
+  --mybrown: #fea38e;
+  --mytan: #fdc7ad;
 }
 
 button {

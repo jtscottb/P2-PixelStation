@@ -1,6 +1,6 @@
 .featured-artist-bar {
-  border: 12px solid #51a59f;
-  background-color: #62c8c0;
+  border: 12px solid var(--mylightblue);
+  background-color: var(--mydarkblue);
   width: 70vw;
   margin: auto;
 
@@ -16,7 +16,7 @@
 }
 
 .art-holder {
-  border: 6px solid var(--mycobalt);
+  border: 6px solid var(--mydarkblue2);
   border-radius: 10px;
   width: 200px;
   height: 200px;
@@ -25,4 +25,17 @@
 .featured-artist-link-holder {
   padding-top: 20px;
   padding-bottom: 10px;
+}
+
+a {
+  display: inline-block;
+  color: var(--mylightblue);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+a:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+  transition: 0.2s;
+  color: var(--mylavender);
 }

@@ -1,6 +1,6 @@
 .random-art-bar {
-  border: 12px solid #ed308f;
-  background-color: #ff83ae;
+  border: 12px solid var(--mypalepink);
+  background-color: var(--mypink);
   width: 80vw;
   margin: auto;
   border-radius: 40px;
@@ -20,7 +20,7 @@
 /* THIS '.art-holder' MIGHT BE CHANGED TO JUST IMAGES LATER */
 
 .art-holder {
-  border: 6px solid var(--mycobalt);
+  border: 6px solid var(--mydarkblue2);
   border-radius: 10px;
   width: 200px;
   height: 200px;
