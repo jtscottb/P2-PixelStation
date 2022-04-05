@@ -1,6 +1,7 @@
 import { Component,  OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+import { User } from '../user';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginComponent implements OnInit {
   showPwordMessage: boolean = false;
   uname: string = '';
   pword: string = '';
+  user!: User;
 
   constructor(
     private userService : UserService,
@@ -31,20 +33,21 @@ export class LoginComponent implements OnInit {
     if(this.pword === '') {
       this.showPwordMessage = true;
     }
-    var booleans = [this.showUnameMessage, this.showPwordMessage];
+    var booleans: boolean[] = [this.showUnameMessage, this.showPwordMessage];
     // this.userService.getUser(uname, pword)
-    var user = {
-      firstName: '',
-      lastName: '',
+    this.user = {
+      // id: 0,
       username: this.uname,
       password: this.pword,
+      firstName: '',
+      lastName: '',
       email: '',
-      role: ''
+      // role: ''
     };
-    if(user.username === '' && !booleans.includes(true)) {
+    if(this.user.username === '' && !booleans.includes(true)) {
       this.showMessage = true;
     } else if(!booleans.includes(true)) {
-      this.userService.setUser(user);
+      this.userService.setUser(this.user);
       this.route.navigate(['/dashboard']);
     }
   }

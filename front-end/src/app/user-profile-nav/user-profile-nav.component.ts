@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-profile-nav',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile-nav.component.css']
 })
 export class UserProfileNavComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private userService : UserService) { }
 
   ngOnInit(): void {
   }

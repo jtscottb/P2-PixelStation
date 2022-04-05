@@ -65,10 +65,11 @@
     name="email"
     placeholder="user@email.com"
     required
+    ngModel email
     [(ngModel)]="email"
     #Email="ngModel"
     />
     <br /><br />
 
-    <button type="button" class="btn btn-success" (click)="onSubmit()">Register</button>
+    <button type="button" (click)="onSubmit()">Register</button>
 </form>
