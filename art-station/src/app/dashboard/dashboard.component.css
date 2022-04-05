@@ -4,11 +4,12 @@
   box-sizing: border-box;
   text-align: center;
   color: white;
-  background-color: #053158;
+  background-color: var(--mydarkblue);
 }
 
 .dashboard-content {
   min-height: 100vh;
+  padding-top: 20px;
 }
 
 .wave .wave2 .wave3 {
@@ -29,42 +30,31 @@
 }
 
 .wave .shape-fill {
-  fill: #053158;
+  fill: var(--mydarkblue);
 }
 .wave2 .shape-fill {
-  fill: #914b79;
+  fill: var(--mylavender);
 }
 .wave3 .shape-fill {
-  fill: #fea38e;
+  fill: var(--mybrown);
 }
 
 .curve-divider-pink {
-  background-color: #053158;
+  background-color: var(--mydarkblue);
 }
 
 .curve-divider-blue {
-  background-color: #914b79;
+  background-color: var(--mylavender);
 }
 
 .curve-divider-yellow {
-  background-color: #fea38e;
+  background-color: var(--mybrown);
 }
 
 .svg-1 {
-  background-color: #914b79;
+  background-color: var(--mylavender);
 }
 
 .svg-2 {
-  background-color: #fea38e;
+  background-color: var(--mybrown);
 }
-
-/* 
-
-#053158; (darkblue)
-#02809a; (lighter blue)
-#914b79; (lavender)
-#f64a80; (lighter pink)
-#fea38e (brownish orange)
-#fdc7ad (lighter brown) 
-
-*/
