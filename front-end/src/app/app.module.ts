@@ -26,6 +26,9 @@ import { UserProfilePostComponent } from './user-profile-post/user-profile-post.
 import { UserService } from './services/user.service';
 import { AuthenticationGuard } from './route-guard/authentication.guard';
 import { AdminGuard } from './route-guard/admin.guard';
+import { PalettesComponent } from './palettes/palettes.component';
+import { PaletteDirectiveDirective } from './palette-directive.directive';
+import { TutorialsComponent } from './tutorials/tutorials.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { AdminGuard } from './route-guard/admin.guard';
     UserProfileNavComponent,
     UserProfileComponent,
     UserProfileGalleryComponent,
-    UserProfilePostComponent
+    UserProfilePostComponent,
+    PalettesComponent,
+    PaletteDirectiveDirective,
+    TutorialsComponent
   ],
   imports: [
     BrowserModule,
