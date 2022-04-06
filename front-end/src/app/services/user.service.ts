@@ -1,56 +1,40 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import { User } from '../user';
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl: string = 'http://localhost:8090';
-  // user?: User;
-  // User: User = {
-  //   user_id: undefined,
-  //   username: undefined,
-  //   password: undefined,
-  //   fName: undefined,
-  //   lName: undefined,
-  //   email: undefined,
-  //   role: undefined
-  // };
 
-  constructor(private http: HttpClient, private user: User) {  }
+  currUser?: User;
 
-  getAll(): Observable<any> {
-    return this.http.get(this.baseUrl+'/users');
+  constructor(private https: HttpClient, private route: Router) { }
+
+  getAll(): Observable<User[]> {
+    return this.https.get<User[]>("http://localhost:8090/users");
   }
 
-  getById(id: number): Observable<any> {
-    return this.http.get(this.baseUrl+'/users/'+id);
+  getUser(id: number): Observable<User>{ 
+    return this.https.get<User>("http://localhost:8090/users/"+id);
   }
 
-  getByUsername(uname: string): Observable<any> {
-    return this.http.get(this.baseUrl+'/users/?username='+uname);
+  updateUser(id: number, user: User): Observable<User>{ 
+    return this.https.put<User>("http://localhost:8090/users/"+id, user);
+  }
+//TODO: This function requires a backend change, wait before using it
+  deleteUser(id: number): Observable<boolean>{ 
+    return this.https.delete<boolean>("http://localhost:8090/users/"+id);
+  }
+//TODO: This function requires a backend change, wait before using it
+  login(username: string, password: string): Observable<User>{
+    return this.https.get<User>("http://localhost:8090/login?username="+username+"&password="+password);
+  }
+//TODO: This function requires a backend change, wait before using it
+  setUser(username: string, password: string): void{
+    this.login(username, password).subscribe(user => this.currUser = user);
   }
 
-  updateUser(id: number, user: User): Observable<any> {
-    return this.http.put(this.baseUrl+'/users/'+id, user);
-  }
-
-  deleteUser(id: number): Observable<any> {
-    return this.http.delete(this.baseUrl+'/users/'+id);
-  }
-
-  login(user: any): Observable<any> {
-    const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
-    return this.http.post(this.baseUrl+'/login', user, config);
-  }
-
-  register(user: User): Observable<any> {
-    const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
-    return this.http.post(this.baseUrl+'/register', user, config);
-  }
-
-  setUser(user: User) {
-    this.user = user;
-  }
 }

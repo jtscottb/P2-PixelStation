@@ -8,12 +8,9 @@ import { User } from '../user';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  username?: string = this.currentUser?.username;
-  currentUser?: User;
+  user: User = this.userService.currUser? this.userService.currUser : {user_id: 0, username: "Default", fname: "", lname: "", email: ""};
 
-  constructor(private userService : UserService, private user : User) { }
+  constructor(private userService : UserService) {}
 
-  ngOnInit(): void { 
-    this.userService.getByUsername(this.user.username).subscribe( (data: User) => { this.currentUser = data; console.log(this.currentUser); })
-  }
+  ngOnInit(): void {}
 }

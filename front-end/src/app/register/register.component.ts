@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { User } from '../user';
 
 @Component({
   selector: 'app-register',
@@ -21,9 +20,8 @@ export class RegisterComponent implements OnInit {
   fname: string = '';
   lname: string = '';
   email: string = '';
-  // user?: User;
 
-  constructor(private userService : UserService, private user : User) { }
+  constructor(private userService : UserService) { }
   
   ngOnInit(): void { }
 
@@ -50,16 +48,17 @@ export class RegisterComponent implements OnInit {
       this.showEmailMessage = true;
     }
     var booleans = [this.showUnameMessage, this.showPwordMessage, this.showFnameMessage, this.showLnameMessage, this.showEmailMessage];
-    this.user = {
+    var user = {
       username: this.uname.toUpperCase(),
-      password:this.pword,
-      fName: this.fname.toUpperCase(),
-      lName: this.lname.toUpperCase(),
-      email: this.email
+      password: this.pword,
+      firstName: this.fname.toUpperCase(),
+      lastName: this.lname.toUpperCase(),
+      email: this.email,
+      role: ''
     }
-    
-    this.userService.register(this.user).subscribe(obj => this.user = obj);
-    if(false) {
+    /*
+    var success: boolean = this.userService.addUser(user);
+    if(success) {
       this.showMessage = true;
       this.text = 'text-success';
       this.message = 'Successfully Registered. Please Login';
@@ -68,6 +67,7 @@ export class RegisterComponent implements OnInit {
       this.text = 'text-danger';
       this.message = 'Username is already taken.';
     }
+    */
   }
 
 }

@@ -26,7 +26,10 @@ import { UserProfilePostComponent } from './user-profile-post/user-profile-post.
 import { UserService } from './services/user.service';
 import { AuthenticationGuard } from './route-guard/authentication.guard';
 import { AdminGuard } from './route-guard/admin.guard';
-import { User } from './user';
+import { ThumbnailComponent } from './thumbnail/thumbnail.component';
+import { PalettesComponent } from './palettes/palettes.component';
+import { PaletteDirectiveDirective } from './palette-directive.directive';
+import { TutorialsComponent } from './tutorials/tutorials.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,11 @@ import { User } from './user';
     UserProfileNavComponent,
     UserProfileComponent,
     UserProfileGalleryComponent,
-    UserProfilePostComponent
+    UserProfilePostComponent,
+    ThumbnailComponent,
+    PalettesComponent,
+    PaletteDirectiveDirective,
+    TutorialsComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +62,7 @@ import { User } from './user';
     FormsModule,
     NgbModule
   ],
-  providers: [User, UserService, AuthenticationGuard, AdminGuard],
+  providers: [UserService, AuthenticationGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 

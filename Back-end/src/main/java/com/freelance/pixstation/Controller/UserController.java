@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.freelance.pixstation.Model.User;
 import com.freelance.pixstation.Service.UserService;
-import com.freelance.pixstation.repo.UserRepo;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -41,12 +40,6 @@ public class UserController {
 		return us.findById(id);
 	}
 	
-	@GetMapping("/users/{username}")
-	public User getbyUsername(@PathVariable String username){
-		User user = us.findByUsername(username);
-		return user;
-	}
-	
 	@PutMapping("/users/{id}")
 	public User updateUser(@PathVariable Integer id, @RequestBody User user) {
 		us.update(user);
@@ -58,11 +51,11 @@ public class UserController {
 		return us.delete(user);
 	}
 	
-	@PostMapping("/login")
-	public User login(@RequestBody User login) {
+	@GetMapping("/login")
+	public User login(@RequestParam String username, @RequestParam String password) {
 		try {
-			User user = us.findByUsername(login.getUsername());
-			if(user.getPassword().equals(login.getPassword())) {
+			User user = us.findByUsername(username);
+			if(user.getPassword().equals(password)) {
 				return user;
 			}else {
 				return null;
@@ -73,21 +66,22 @@ public class UserController {
 	}
 	
 	@PostMapping("/register")
-	public User register(@RequestBody User user) {
-//		User user = new User();
-//		user.setUsername(username);
-//		user.setPassword(password);
-//		user.setfName(fname);
-//		user.setlName(lname);
-//		user.setEmail(email);
-//		Part pic = propic;
-//		byte[] img = new byte[(int)pic.getSize()];
-//		try {
-//			pic.getInputStream().read(img);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		user.setProPic(img);
+	public User register(@RequestParam String username, @RequestParam String password, @RequestParam String fname,
+			@RequestParam String lname, @RequestParam String email, @RequestPart Part propic) {
+		User user = new User();
+		user.setUsername(username);
+		user.setPassword(password);
+		user.setfName(fname);
+		user.setlName(lname);
+		user.setEmail(email);
+		Part pic = propic;
+		byte[] img = new byte[(int)pic.getSize()];
+		try {
+			pic.getInputStream().read(img);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		user.setProPic(img);
 		us.save(user);
 		return user;
 	}

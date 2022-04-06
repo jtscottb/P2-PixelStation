@@ -11,7 +11,7 @@
 
 .art-holder-box-2 {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding-bottom: 70px;
   padding-left: 30px;
   padding-right: 30px;
