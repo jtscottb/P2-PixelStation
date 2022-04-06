@@ -24,7 +24,7 @@
 			Title: <input type="text" name="title" value="" /> <br/><br/>
 			Description: <textarea name="descript" value=""></textarea> <br/><br/>
 			Image: <input type="file" name="photo" /> <br/><br/>
-			<input type="hidden" name="id" value="1" />
+			User ID: <input type="number" name="id" value="1" /><br/><br/>
 			<button type="submit">Submit Post</button>
 		</form>
 	</div>
@@ -34,8 +34,8 @@
 		<form action="/comment" method="post" enctype="multipart/form-data">
 			User says:<br/><br/>
 			<textarea name="body" value=""></textarea> <br/><br/>
-			<input type="hidden" name="user_id" value="1"/>
-			<input type="hidden" name="post_id" value="2"/>
+			User ID: <input type="number" name="user_id" value="1"/><br/><br/>
+			Post ID: <input type="number" name="post_id" value="2"/><br/><br/>
 			<button type="submit">Submit Comment</button>
 		</form>
 	</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +8,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  username: string = this.userService.User.username;
+  user: User = this.userService.currUser? this.userService.currUser : {user_id: 0, username: "", fname: "", lname: "", email: ""};
 
   constructor(private userService : UserService) {}
 
