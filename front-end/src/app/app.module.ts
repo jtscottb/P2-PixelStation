@@ -26,6 +26,7 @@ import { UserProfilePostComponent } from './user-profile-post/user-profile-post.
 import { UserService } from './services/user.service';
 import { AuthenticationGuard } from './route-guard/authentication.guard';
 import { AdminGuard } from './route-guard/admin.guard';
+import { ThumbnailComponent } from './thumbnail/thumbnail.component';
 import { PalettesComponent } from './palettes/palettes.component';
 import { PaletteDirectiveDirective } from './palette-directive.directive';
 import { TutorialsComponent } from './tutorials/tutorials.component';
@@ -49,6 +50,7 @@ import { TutorialsComponent } from './tutorials/tutorials.component';
     UserProfileComponent,
     UserProfileGalleryComponent,
     UserProfilePostComponent,
+    ThumbnailComponent,
     PalettesComponent,
     PaletteDirectiveDirective,
     TutorialsComponent

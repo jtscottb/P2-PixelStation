@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.freelance.pixstation.Model.User;
 import com.freelance.pixstation.Service.UserService;
-import com.freelance.pixstation.repo.UserRepo;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -52,7 +51,7 @@ public class UserController {
 		return us.delete(user);
 	}
 	
-	@PostMapping("/login")
+	@GetMapping("/login")
 	public User login(@RequestParam String username, @RequestParam String password) {
 		try {
 			User user = us.findByUsername(username);

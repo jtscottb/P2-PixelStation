@@ -14,16 +14,8 @@ import { AdminGuard } from './route-guard/admin.guard';
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'welcome', component: WelcomeComponent },
-<<<<<<< HEAD:art-station/src/app/app-routing.module.ts
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'admin', component: AdminDashboardComponent },
-=======
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard] },
-  { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard] },
->>>>>>> 43b71cbbfbdf25e7831d0c5c72e98491a07da8cb:front-end/src/app/app-routing.module.ts
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard]},
+  { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard]},
   { path: 'post', component: PostComponent },
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'palettes', component: PalettesComponent },
