@@ -10,19 +10,23 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { PostComponent } from './post/post.component';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { PalettesComponent } from './palettes/palettes.component';
 import { AuthenticationGuard } from './route-guard/authentication.guard';
+import { TutorialsComponent } from './tutorials/tutorials.component';
 import { AdminGuard } from './route-guard/admin.guard';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'welcome', component: WelcomeComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard] },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard] },
+  { path: 'admin', component: AdminDashboardComponent },
   { path: 'post', component: PostComponent },
-  { path: 'user-profile', component: UserProfileComponent }
+  { path: 'user-profile', component: UserProfileComponent },
+  { path: 'palettes', component: PalettesComponent },
+  { path: 'tutorials', component: TutorialsComponent },
 ];
 
 @NgModule({
@@ -30,3 +34,13 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
+
+/*
+
+route guard stuff
+
+ { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard] },
+
+ { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard] },
+
+*/
