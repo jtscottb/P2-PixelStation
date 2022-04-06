@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-header.component.css'],
 })
 export class DashboardHeaderComponent implements OnInit {
-  @Input() boi?: string;
+  @Input() boi?: string | null;
   constructor() {}
 
   ngOnInit(): void {}

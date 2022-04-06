@@ -25,11 +25,10 @@ public class User {
 	@Column
 	private String username;
 	@Column
-	@JsonIgnore
 	private String password;
-	@Column
+	@Column(name = "f_name")
 	private String fName;
-	@Column
+	@Column(name = "l_name")
 	private String lName;
 	@Column
 	private String email;

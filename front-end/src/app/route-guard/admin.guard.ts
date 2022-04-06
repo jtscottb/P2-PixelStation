@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanDeactivate, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserService } from '../services/user.service';
+import { User } from '../user';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +11,14 @@ export class AdminGuard implements CanActivate, CanActivateChild, CanDeactivate<
 
   constructor(
     private userService: UserService,
-    private route: Router
+    private route: Router,
+    private user: User
     ) { }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(this.userService.User.role == 'admin') {
+      if(this.user.role == 'admin') {
         return true;
       } else {
         this.route.navigate(['/welcome']);

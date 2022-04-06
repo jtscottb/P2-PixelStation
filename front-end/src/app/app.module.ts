@@ -26,6 +26,7 @@ import { UserProfilePostComponent } from './user-profile-post/user-profile-post.
 import { UserService } from './services/user.service';
 import { AuthenticationGuard } from './route-guard/authentication.guard';
 import { AdminGuard } from './route-guard/admin.guard';
+import { User } from './user';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import { AdminGuard } from './route-guard/admin.guard';
     FormsModule,
     NgbModule
   ],
-  providers: [UserService, AuthenticationGuard, AdminGuard],
+  providers: [User, UserService, AuthenticationGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 
