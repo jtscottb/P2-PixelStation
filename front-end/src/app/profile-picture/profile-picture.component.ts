@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./profile-picture.component.css']
 })
 export class ProfilePictureComponent implements OnInit {
-  @Input() id?: number;
+  @Input() id?: number | null | undefined;
 
   constructor() { }
 

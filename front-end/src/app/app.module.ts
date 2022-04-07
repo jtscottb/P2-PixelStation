@@ -30,6 +30,7 @@ import { ThumbnailComponent } from './thumbnail/thumbnail.component';
 import { PalettesComponent } from './palettes/palettes.component';
 import { PaletteDirectiveDirective } from './palette-directive.directive';
 import { TutorialsComponent } from './tutorials/tutorials.component';
+import { PostFormComponent } from './post-form/post-form.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { TutorialsComponent } from './tutorials/tutorials.component';
     ThumbnailComponent,
     PalettesComponent,
     PaletteDirectiveDirective,
-    TutorialsComponent
+    TutorialsComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,

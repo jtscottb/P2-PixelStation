@@ -24,17 +24,21 @@ export class UserService {
   updateUser(id: number, user: User): Observable<User>{ 
     return this.https.put<User>("http://localhost:8090/users/"+id, user);
   }
-//TODO: This function requires a backend change, wait before using it
+
+  registerUser(data: FormData): Observable<User>{ 
+    return this.https.post<User>("http://localhost:8090/register", data);
+  }
+
   deleteUser(id: number): Observable<boolean>{ 
     return this.https.delete<boolean>("http://localhost:8090/users/"+id);
   }
-//TODO: This function requires a backend change, wait before using it
+
   login(username: string, password: string): Observable<User>{
     return this.https.get<User>("http://localhost:8090/login?username="+username+"&password="+password);
   }
-//TODO: This function requires a backend change, wait before using it
+
   setUser(username: string, password: string): void{
-    this.login(username, password).subscribe(user => this.currUser = user);
+    this.login(username, password).subscribe(user => {this.currUser = user; this.route.navigate(['/dashboard'])});
   }
 
 }

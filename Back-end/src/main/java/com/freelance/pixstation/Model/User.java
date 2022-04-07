@@ -24,8 +24,8 @@ public class User {
 	private Integer user_id;
 	@Column
 	private String username;
-	@Column
 	@JsonIgnore
+	@Column
 	private String password;
 	@Column
 	private String fName;
@@ -33,8 +33,8 @@ public class User {
 	private String lName;
 	@Column
 	private String email;
-	@Column
 	@JsonIgnore
+	@Column
 	private byte[] proPic;
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.EAGER, mappedBy ="poster")

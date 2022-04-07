@@ -10,6 +10,7 @@ import { PalettesComponent } from './palettes/palettes.component';
 import { AuthenticationGuard } from './route-guard/authentication.guard';
 import { TutorialsComponent } from './tutorials/tutorials.component';
 import { AdminGuard } from './route-guard/admin.guard';
+import { PostFormComponent } from './post-form/post-form.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'palettes', component: PalettesComponent },
   { path: 'tutorials', component: TutorialsComponent },
+  {path: 'post-form', component: PostFormComponent}
 ];
 
 @NgModule({

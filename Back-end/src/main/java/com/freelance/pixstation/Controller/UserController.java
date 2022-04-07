@@ -29,7 +29,6 @@ public class UserController {
 	@Autowired
 	UserService us;
 	
-	
 	@GetMapping("/users")
 	public List<User> getAll(){
 		return us.findAll();
@@ -47,8 +46,9 @@ public class UserController {
 	}
 	
 	@DeleteMapping("users/{id}")
-	public boolean deleteUser(@PathVariable Integer id, @RequestBody User user) {
-		return us.delete(user);
+	public boolean deleteUser(@PathVariable Integer id) {
+		User delUser = us.findById(id);
+		return us.delete(delUser);
 	}
 	
 	@GetMapping("/login")
