@@ -66,22 +66,21 @@ public class UserController {
 	}
 	
 	@PostMapping("/register")
-	public User register(@RequestParam String username, @RequestParam String password, @RequestParam String fname,
-			@RequestParam String lname, @RequestParam String email, @RequestPart Part propic) {
-		User user = new User();
-		user.setUsername(username);
-		user.setPassword(password);
-		user.setfName(fname);
-		user.setlName(lname);
-		user.setEmail(email);
-		Part pic = propic;
-		byte[] img = new byte[(int)pic.getSize()];
-		try {
-			pic.getInputStream().read(img);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		user.setProPic(img);
+	public User register(@RequestBody User user/* , @RequestPart Part propic */) {
+//		User user = new User();
+//		user.setUsername(username);
+//		user.setPassword(password);
+//		user.setfName(fname);
+//		user.setlName(lname);
+//		user.setEmail(email);
+//		Part pic = propic;
+//		byte[] img = new byte[(int)pic.getSize()];
+//		try {
+//			pic.getInputStream().read(img);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		user.setProPic(img);
 		us.save(user);
 		return user;
 	}

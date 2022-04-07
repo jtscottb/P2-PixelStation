@@ -1,8 +1,13 @@
 * {
   box-sizing: border-box;
   text-align: center;
-  background-color: var(--mycharcoal);
-  color: var(--mygray);
+
+  color: #ffaec8;
+  background-color: #053158;
+}
+
+button:hover {
+  transition: pulse;
 }
 
 .post-component {
@@ -27,4 +32,53 @@
 .dislike-btn {
   background-color: red;
   color: white;
+}
+
+.post-image {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 25px;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  background-color: #053158;
+}
+
+.col {
+  width: 50%;
+  float: left;
+  padding: 1%;
+}
+
+.row {
+  padding: 3%;
+}
+
+#post-info {
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+#post-title {
+}
+
+#user-info {
+}
+
+#like {
+  object-fit: contain;
+}
+
+#post-description {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #004d85;
+  text-align: left;
+  border-radius: 15px;
+  padding: 5%;
+  display: inline-block;
+  height: 300px;
 }
