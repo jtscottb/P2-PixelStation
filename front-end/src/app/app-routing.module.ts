@@ -6,6 +6,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { PostComponent } from './post/post.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { PalettesComponent } from './palettes/palettes.component';
 import { AuthenticationGuard } from './route-guard/authentication.guard';
 import { TutorialsComponent } from './tutorials/tutorials.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'palettes', component: PalettesComponent },
   { path: 'tutorials', component: TutorialsComponent },
+  { path: 'about-us', component: AboutUsComponent },
 ];
 
 @NgModule({
