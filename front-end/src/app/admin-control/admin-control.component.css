@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+}
+
+.admin-control-content {
+  background-color: var(--mydarkblue2);
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+
+.admin-nav-holder {
+  padding-top: 20px;
+}
+
+.admin-dashboard-header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.admin-holder {
+  border: 12px solid var(--mypalepink);
+  background-color: var(--mypink);
+  width: 90vw;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 40px;
+  padding-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 40vh;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

@@ -4,10 +4,10 @@
   box-sizing: border-box;
   text-align: center;
   color: white;
-  background-color: var(--mydarkblue);
 }
 
 .admin-dashboard-content {
+  background-color: var(--mydarkblue2);
   min-height: 100vh;
   padding-bottom: 30px;
 }
@@ -18,8 +18,8 @@
 }
 
 .admin-buttons-holder {
-  border: 12px solid var(--mylightblue);
-  background-color: var(--mydarkblue2);
+  border: 12px solid var(--mytan);
+  background-color: var(--mydarkblue);
   width: 90vw;
   margin: auto;
   margin-bottom: 30px;
@@ -30,6 +30,7 @@
   padding-bottom: 40vh;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .admin-button {
@@ -38,10 +39,28 @@
   height: 300px;
   padding-top: 20px;
   transition: 0.5s;
+  cursor: pointer;
+  opacity: 0.8;
+  border: 1px solid black;
+}
+
+.admin-button:hover {
+  transform: rotateZ(7deg);
+  transition: 0.5s;
+  border: 1px solid white;
+
+  opacity: 1;
 }
 
 .to-do-list {
   background-color: var(--mylightblue);
+}
+
+.to-do-list:hover {
+}
+
+.to-do-list h2,
+.to-do-list h4 {
   color: var(--mycharcoal);
 }
 
@@ -53,9 +72,4 @@
 .view-user-info {
   background-color: var(--mylavender);
   color: var(--mydarkblue);
-}
-
-.admin-button:hover {
-  transform: scaleY(10px);
-  transition: 0.5s;
 }

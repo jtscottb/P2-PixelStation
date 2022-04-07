@@ -32,6 +32,10 @@ export class UserService {
   login(username: string, password: string): Observable<User>{
     return this.https.get<User>("http://localhost:8090/login?username="+username+"&password="+password);
   }
+ //TODO: This function requires a backend change, wait before using it
+  register(user: User): Observable<User>{
+    return this.https.post<User>("http://localhost:8090/register", user);
+  }
 //TODO: This function requires a backend change, wait before using it
   setUser(username: string, password: string): void{
     this.login(username, password).subscribe(user => this.currUser = user);

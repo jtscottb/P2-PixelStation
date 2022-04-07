@@ -1,11 +1,30 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   text-align: center;
+  background-color: var(--mycharcoal);
   color: var(--mygray);
 }
 
 .post-component {
   width: 18rem;
+  cursor: pointer;
+}
+
+.post-title h5 {
+  color: white;
+}
+
+.like-dislike-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.like-btn {
+  background-color: blue;
+  color: white;
+}
+
+.dislike-btn {
+  background-color: red;
+  color: white;
 }
