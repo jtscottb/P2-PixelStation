@@ -1,8 +1,9 @@
 <div class="dashboard-content">
   <app-nav-holder></app-nav-holder>
   <div class="curve-divider-pink">
-    <app-dashboard-header [boi]="user.username"></app-dashboard-header>
-    <app-profile-picture [id]="user.user_id"></app-profile-picture>
+    <app-dashboard-header *ngIf="user" [boi]="user.username"></app-dashboard-header>
+    <app-profile-picture  *ngIf="user" [id]="user.user_id"></app-profile-picture>
+    <a routerLink="/post-form" routerLinkActive="active" class="btn btn-primary"> Create Post </a>
   </div>
   <div class="wave">
     <svg
@@ -22,7 +23,7 @@
   <div class="tags-bar"></div>
   <div class="dashboard-bottom-half">
     <div class="curve-divider-blue">
-      <app-featured-artist-bar [boi]="user.username"></app-featured-artist-bar>
+      <app-featured-artist-bar></app-featured-artist-bar>
     </div>
     <div class="wave2">
       <svg

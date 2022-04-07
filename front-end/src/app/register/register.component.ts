@@ -7,6 +7,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  data: FormData = new FormData();
   message: string = '';
   text: string = '';
   showMessage: boolean = false;
@@ -20,10 +21,16 @@ export class RegisterComponent implements OnInit {
   fname: string = '';
   lname: string = '';
   email: string = '';
+  file: Blob = new Blob;
 
   constructor(private userService : UserService) { }
   
   ngOnInit(): void { }
+
+  onChange(event: any){
+    this.file = event.target.files[0];
+    this.data.append("propic", this.file);
+  }
 
   onSubmit() {
     this.showMessage = false;
@@ -47,25 +54,13 @@ export class RegisterComponent implements OnInit {
     if(this.email == '') {
       this.showEmailMessage = true;
     }
-    var booleans = [this.showUnameMessage, this.showPwordMessage, this.showFnameMessage, this.showLnameMessage, this.showEmailMessage];
-    var user = {
-      user_id: 0,
-      username: this.uname.toUpperCase(),
-      password: this.pword,
-      fname: this.fname.toUpperCase(),
-      lname: this.lname.toUpperCase(),
-      email: this.email
-    }
-    if(!booleans.includes(true)) {
-      this.userService.register(user).subscribe(obj => console.log(obj));
-      this.showMessage = true;
-      this.text = 'text-success';
-      this.message = 'Successfully Registered. Please Login';
-    } else {
-      this.showMessage = true;
-      this.text = 'text-danger';
-      this.message = 'Username is already taken.';
-    }
+    
+    this.data.append("username", this.uname);
+    this.data.append("password", this.pword);
+    this.data.append("fname", this.fname);
+    this.data.append("lname", this.lname);
+    this.data.append("email", this.email);
+    this.userService.registerUser(this.data).subscribe(()=>this.userService.setUser(this.uname, this.pword));
   }
 
 }
