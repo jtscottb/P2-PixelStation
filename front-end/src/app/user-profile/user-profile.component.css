@@ -1,3 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 .nav-holder {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -6,5 +13,6 @@
 .user-profile-component {
   min-height: 100%;
   height: 100vh;
-  background-color: var(--mypalepink);
+  width: 100vw;
+  background-color: var(--mylavender);
 }

@@ -13,11 +13,15 @@
     </div>
 </section> -->
 
-<div>
-    <label for="new-post">New Post: </label>
-    <!-- upload pic -->
-    <textarea name="new-post" placeholder="Enter your message..." #post></textarea>
-    <button type="button" class="post-button" (click)="add(); post.value = ''">
+<div class="user-post">
+  <label for="new-post">New Post: </label>
+  <!-- upload pic -->
+  <textarea
+    name="new-post"
+    placeholder="Enter your message..."
+    #post
+  ></textarea>
+  <button type="button" class="post-button" (click)="add(); post.value = ''">
     Post
   </button>
 </div>
