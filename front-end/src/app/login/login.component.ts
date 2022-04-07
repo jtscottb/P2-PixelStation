@@ -34,22 +34,17 @@ export class LoginComponent implements OnInit {
       this.showPwordMessage = true;
     }
     var booleans: boolean[] = [this.showUnameMessage, this.showPwordMessage];
-    // this.userService.getUser(uname, pword)
-    this.user = {
-      // id: 0,
-      username: this.uname,
-      password: this.pword,
-      firstName: '',
-      lastName: '',
-      email: '',
-      // role: ''
-    };
+
+    this.userService.setUser(this.uname, this.pword);
+    this.route.navigate(['/dashboard']);
+    /*
     if(this.user.username === '' && !booleans.includes(true)) {
       this.showMessage = true;
     } else if(!booleans.includes(true)) {
-      this.userService.setUser(this.user);
+      this.userService.setUser(this.uname, this.pword);
       this.route.navigate(['/dashboard']);
     }
+    */
   }
 
 }
