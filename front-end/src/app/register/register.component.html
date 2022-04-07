@@ -6,7 +6,7 @@
     <input
     type="text"
     id="uname"
-    name="uname"
+    name="username"
     placeholder="Username"
     [(ngModel)]="uname"
     #username="ngModel"
@@ -22,7 +22,7 @@
     <input
     type="password"
     id="pword"
-    name="pword"
+    name="password"
     placeholder="Password"
     required
     minlength="4"
@@ -71,5 +71,7 @@
     />
     <br /><br />
 
-    <button type="button" (click)="onSubmit()">Register</button>
+    <input type="file" class="file-input" name="propic" (change)="onChange($event)" #fileUpload><br/>
+
+    <button type="submit" (click)="onSubmit()">Register</button>
 </form>
