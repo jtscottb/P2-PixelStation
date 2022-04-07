@@ -1,9 +1,32 @@
+<!-- <div class="card post-component">
+  <img
+    class="card-image-top post-image"
+    src="http://localhost:8090/image/{{ post.post_id }}"
+    alt="post-image"
+  />
+  <div class="card-body post-content-holder">
+    <div class="card-title post-title">
+      <h5>{{ post.title }}</h5>
+    </div>
+    <div class="card-text post-description">
+      Posted by: {{ post.poster.username }} {{ post.posted }}<br />
+      {{ post.descript }}<br />
+    </div>
+    <div class="card-footer post-comment-holder">
+      <div class="like-dislike-container">
+        <button class="btn like-btn">Like</button>
+        <button class="btn dislike-btn">Dislike</button>
+      
+      ACCEPTED BOTH TO MESS WITH LATER, SORRY FOR THE LONG COMMENT - BRANDON
+      
+      
+      -->
 <div class="container">
   <div class="row">
     <div class="col">
       <img
         class="card-image-top post-image"
-        src="http://localhost:8090/image/{{post.post_id}}"
+        src="http://localhost:8090/image/{{ post.post_id }}"
         alt="post-image"
       />
     </div>
@@ -11,40 +34,46 @@
     <div class="col">
       <div id="post-info">
         <div class="row">
-          <div id="post-title"><h2>{{post.title}}</h2></div>
+          <div id="post-title">
+            <h2>{{ post.title }}</h2>
+          </div>
         </div>
 
         <div class="row">
           <p>
-            <button class="btn btn-primary"><img class="like" src="./images/ThumbsUp.png" alt="Like"></button>
+            <button class="btn btn-primary">
+              <img class="like" src="./images/ThumbsUp.png" alt="Like" />
+            </button>
             &nbsp; | &nbsp;
-            <button class="btn btn-danger"><img class="like" src="./images/ThumbsDown.png" alt="Dislike"></button>
+            <button class="btn btn-danger">
+              <img class="like" src="./images/ThumbsDown.png" alt="Dislike" />
+            </button>
           </p>
         </div>
-        
+
         <div class="row">
           <div id="user-info">
             <div class="col">
-              Posted by: <a routerLink="/dashboard/:{{post.poster.user_id}}">{{post.poster.username}}</a>
+              Posted by:
+              <a routerLink="/dashboard/:{{ post.poster.user_id }}">{{
+                post.poster.username
+              }}</a>
             </div>
             <div class="col">
-              Date Posted: {{post.posted | date : 'short' }}
+              Date Posted: {{ post.posted | date: "short" }}
             </div>
           </div>
         </div>
 
         <div class="row">
           <div id="post-description">
-            {{post.descript}}
+            {{ post.descript }}
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
 
 <!-- <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">

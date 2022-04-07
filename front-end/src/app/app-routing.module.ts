@@ -15,8 +15,16 @@ import { AdminGuard } from './route-guard/admin.guard';
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'welcome', component: WelcomeComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard]},
-  { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard]},
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'admin',
+    component: AdminDashboardComponent,
+    canActivate: [AdminGuard],
+  },
   { path: 'dashboard/:postId', component: PostComponent },
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'palettes', component: PalettesComponent },
@@ -31,6 +39,8 @@ const routes: Routes = [
 export class AppRoutingModule {}
 
 /*
+
+
 
 route guard stuff
 

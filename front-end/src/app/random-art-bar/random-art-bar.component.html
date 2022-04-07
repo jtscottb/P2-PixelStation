@@ -2,10 +2,15 @@
   <h3>Here's Some Other Stuff We Think You'd Like</h3>
   <br />
   <div class="art-holder-box-2">
+<<<<<<< HEAD
+    <div class="thumbnail" *ngFor="let thumbnail of thumbnails">
+      <app-thumbnail [post]="thumbnail"></app-thumbnail>
+=======
     <div *ngFor="let thumbnail of thumbnails">
       <a routerLink="/dashboard/{{ thumbnail.post_id }}">
         <app-thumbnail [post]="thumbnail"></app-thumbnail>
       </a>
+>>>>>>> e6e3179a8d812a78573d3f899bb56144b7bd2039
     </div>
   </div>
 </div>

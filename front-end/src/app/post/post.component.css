@@ -1,8 +1,7 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   text-align: center;
+
   color: #ffaec8;
   background-color: #053158;
 }
@@ -13,6 +12,26 @@ button:hover {
 
 .post-component {
   width: 18rem;
+  cursor: pointer;
+}
+
+.post-title h5 {
+  color: white;
+}
+
+.like-dislike-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.like-btn {
+  background-color: blue;
+  color: white;
+}
+
+.dislike-btn {
+  background-color: red;
+  color: white;
 }
 
 .post-image {
@@ -45,11 +64,9 @@ button:hover {
 }
 
 #post-title {
-
 }
 
 #user-info {
-
 }
 
 #like {
@@ -57,7 +74,7 @@ button:hover {
 }
 
 #post-description {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   background-color: #004d85;
   text-align: left;
   border-radius: 15px;

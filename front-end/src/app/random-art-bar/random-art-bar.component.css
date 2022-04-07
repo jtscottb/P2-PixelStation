@@ -17,11 +17,14 @@
   padding-right: 30px;
 }
 
-/* THIS '.art-holder' MIGHT BE CHANGED TO JUST IMAGES LATER */
+.thumbnail {
+  border: 2px solid black;
+  transition: 0.3s;
+  cursor: pointer;
+}
 
-.art-holder {
-  border: 6px solid var(--mydarkblue2);
-  border-radius: 10px;
-  width: 200px;
-  height: 200px;
+.thumbnail:hover {
+  border: 2px solid white;
+  transform: scale3d(1.1, 1.1, 1.1);
+  transition: 0.3s;
 }
