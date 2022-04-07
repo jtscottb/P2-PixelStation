@@ -1,43 +1,11 @@
-* {
-  box-sizing: border-box;
-  text-align: center;
-
-  color: #ffaec8;
+body {
   background-color: #053158;
 }
 
-button:hover {
-  transition: pulse;
-}
-
-.post-component {
-  width: 18rem;
-  cursor: pointer;
-}
-
-.post-title h5 {
-  color: white;
-}
-
-.like-dislike-container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.like-btn {
-  background-color: blue;
-  color: white;
-}
-
-.dislike-btn {
-  background-color: red;
-  color: white;
-}
-
-.post-image {
-  width: 100%;
-  object-fit: contain;
-  border-radius: 25px;
+* {
+  box-sizing: border-box;
+  text-align: center;
+  color: #ffaec8;
 }
 
 .container {
@@ -57,6 +25,12 @@ button:hover {
   padding: 3%;
 }
 
+.post-image {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 25px;
+}
+
 #post-info {
   text-align: center;
   vertical-align: middle;
@@ -64,13 +38,17 @@ button:hover {
 }
 
 #post-title {
+  
 }
 
 #user-info {
+
 }
 
-#like {
+.like {
+  height: 25px;
   object-fit: contain;
+  vertical-align: middle;
 }
 
 #post-description {

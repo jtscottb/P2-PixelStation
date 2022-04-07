@@ -19,13 +19,7 @@ export class PostComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getPost();
-  }
-
-  getPost() {
     const postId = Number(this.route.snapshot.paramMap.get('postId'));
-    this.postService.getPost(postId).subscribe((obj: Post) => {
-      this.post = obj;
-    });
+    this.postService.getPost(postId).subscribe( (obj: Post) => { this.post = obj });
   }
 }
