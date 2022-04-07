@@ -27,10 +27,10 @@ public class User {
 	@JsonIgnore
 	@Column
 	private String password;
-	@Column
-	private String fName;
-	@Column
-	private String lName;
+	@Column(name = "f_name")
+	private String fname;
+	@Column(name = "l_name")
+	private String lname;
 	@Column
 	private String email;
 	@JsonIgnore
@@ -47,14 +47,14 @@ public class User {
 		
 	}
 
-	public User(Integer user_id, String username, String password, String fName, String lName, String email,
+	public User(Integer user_id, String username, String password, String fname, String lname, String email,
 			byte[] proPic, List<Post> posts, List<Comment> comments) {
 		super();
 		this.user_id = user_id;
 		this.username = username;
 		this.password = password;
-		this.fName = fName;
-		this.lName = lName;
+		this.fname = fname;
+		this.lname = lname;
 		this.email = email;
 		this.proPic = proPic;
 		this.posts = posts;
@@ -86,19 +86,19 @@ public class User {
 	}
 
 	public String getfName() {
-		return fName;
+		return fname;
 	}
 
 	public void setfName(String fName) {
-		this.fName = fName;
+		this.fname = fName;
 	}
 
 	public String getlName() {
-		return lName;
+		return lname;
 	}
 
 	public void setlName(String lName) {
-		this.lName = lName;
+		this.lname = lName;
 	}
 
 	public String getEmail() {
@@ -135,8 +135,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [user_id=" + user_id + ", username=" + username + ", password=" + password + ", fName=" + fName
-				+ ", lName=" + lName + ", email=" + email + ", proPic=" + Arrays.toString(proPic) + ", posts=" + posts
+		return "User [user_id=" + user_id + ", username=" + username + ", password=" + password + ", fName=" + fname
+				+ ", lName=" + lname + ", email=" + email + ", proPic=" + Arrays.toString(proPic) + ", posts=" + posts
 				+ ", comments=" + comments + "]";
 	}
 

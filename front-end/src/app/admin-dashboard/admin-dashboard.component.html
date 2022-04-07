@@ -3,24 +3,42 @@
     <h1>Welcome To The Admin Dashboard ((boi))!</h1>
   </div>
   <div class="admin-buttons-holder">
-    <div class="admin-button to-do-list">
-      <div>
+    <a
+      routerLink="/admin-to-do-list"
+      routerLinkActive="active"
+      class="nav-link"
+    >
+      <div class="admin-button to-do-list">
         <h2>Inbox</h2>
         <br />
-        <h4>Check Your Notifications & To-Do List</h4>
+        <h4>Check Your Notifications / To-Do List</h4>
       </div>
-    </div>
-    <div class="admin-button admin-control">
-      <h2>Admin Controls</h2>
-      <br />
-      <h4>Delete or Restore Content</h4>
-      <br />
-      <h5>(Or Whip Out the 'ole Ban Hammer)</h5>
-    </div>
-    <div class="admin-button view-user-info">
-      <h2>General Info</h2>
-      <br />
-      <h4>View or Edit User Information</h4>
-    </div>
+    </a>
+
+    <a routerLink="/admin-control" routerLinkActive="active" class="nav-link">
+      <div class="admin-button admin-control">
+        <h2>Admin Controls</h2>
+        <br />
+        <h4>Delete / Restore Content</h4>
+        <br />
+        <h5>(Or Whip Out the 'ole Ban Hammer)</h5>
+      </div>
+    </a>
+    <a
+      routerLink="/admin-user-service"
+      routerLinkActive="active"
+      class="nav-link"
+    >
+      <div class="admin-button view-user-info">
+        <h2>General Info</h2>
+        <br />
+        <h4>View / Edit User Information</h4>
+      </div>
+    </a>
+  </div>
+  <div class="log-out">
+    <a routerLink="/welcome" routerLinkActive="active" class="nav-link"
+      >Log Out</a
+    >
   </div>
 </div>

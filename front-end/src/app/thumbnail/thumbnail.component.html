@@ -1,20 +1,25 @@
-<div class="card post-component">
+<a routerLink="/dashboard/{{ post.post_id }}">
+  <div class="card post-component">
     <img
       class="card-image-top post-image"
-      src="http://localhost:8090/image/{{post.post_id}}"
+      src="http://localhost:8090/image/{{ post.post_id }}"
       alt="post-image"
     />
     <div class="card-body post-content-holder">
-      <div class="card-title post-title"><h5>{{post.title}}</h5></div>
+      <div class="card-title post-title">
+        <h5>{{ post.title }}</h5>
+      </div>
       <div class="card-text post-description">
-        By: {{post.poster.username}} {{post.posted | date:'shortDate'}}<br/>
-        {{post.descript}}<br/>
+        By: {{ post.poster.username }} {{ post.posted | date: "shortDate"
+        }}<br />
+        {{ post.descript }}<br />
       </div>
       <div class="card-footer post-comment-holder">
         <div class="like-dislike-container">
-          <button class="btn">Like | </button>
-          <button class="btn"> Dislike</button>
+          <button class="btn like-btn">Like</button>
+          <button class="btn dislike-btn">Dislike</button>
         </div>
       </div>
     </div>
   </div>
+</a>

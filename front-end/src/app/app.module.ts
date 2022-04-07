@@ -31,6 +31,11 @@ import { PalettesComponent } from './palettes/palettes.component';
 import { PaletteDirectiveDirective } from './palette-directive.directive';
 import { TutorialsComponent } from './tutorials/tutorials.component';
 import { PostFormComponent } from './post-form/post-form.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { AdminToDoListComponent } from './admin-to-do-list/admin-to-do-list.component';
+import { AdminControlComponent } from './admin-control/admin-control.component';
+import { AdminUserServiceComponent } from './admin-user-service/admin-user-service.component';
+import { AdminNavHolderComponent } from './admin-nav-holder/admin-nav-holder.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +60,12 @@ import { PostFormComponent } from './post-form/post-form.component';
     PalettesComponent,
     PaletteDirectiveDirective,
     TutorialsComponent,
-    PostFormComponent
+    PostFormComponent,
+    AboutUsComponent,
+    AdminToDoListComponent,
+    AdminControlComponent,
+    AdminUserServiceComponent,
+    AdminNavHolderComponent
   ],
   imports: [
     BrowserModule,
