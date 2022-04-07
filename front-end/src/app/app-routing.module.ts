@@ -27,7 +27,6 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminDashboardComponent,
-    canActivate: [AdminGuard],
   },
   { path: 'dashboard/:postId', component: PostComponent },
   { path: 'user-profile', component: UserProfileComponent },
@@ -49,7 +48,7 @@ export class AppRoutingModule {}
 
 
 
-
+canActivate: [AdminGuard],
 
 route guard stuff
 
