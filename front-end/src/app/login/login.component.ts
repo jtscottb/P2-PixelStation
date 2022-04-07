@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
       this.showPwordMessage = true;
     }
     var booleans: boolean[] = [this.showUnameMessage, this.showPwordMessage];
-
     this.userService.setUser(this.uname, this.pword);
     this.route.navigate(['/dashboard']);
     /*
