@@ -11,6 +11,7 @@ import { PalettesComponent } from './palettes/palettes.component';
 import { AuthenticationGuard } from './route-guard/authentication.guard';
 import { TutorialsComponent } from './tutorials/tutorials.component';
 import { AdminGuard } from './route-guard/admin.guard';
+import { PostFormComponent } from './post-form/post-form.component';
 
 import { AdminControlComponent } from './admin-control/admin-control.component';
 import { AdminToDoListComponent } from './admin-to-do-list/admin-to-do-list.component';
@@ -27,7 +28,6 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminDashboardComponent,
-    canActivate: [AdminGuard],
   },
   /* { path: 'dashboard/:postId', component: PostComponent },
   { path: 'user-profile', component: UserProfileComponent }, */
@@ -35,6 +35,7 @@ const routes: Routes = [
   { path: 'user-profile/:userId', component: UserProfileComponent },
   { path: 'palettes', component: PalettesComponent },
   { path: 'tutorials', component: TutorialsComponent },
+  {path: 'post-form', component: PostFormComponent},
   { path: 'about-us', component: AboutUsComponent },
   { path: 'admin-control', component: AdminControlComponent },
   { path: 'admin-to-do-list', component: AdminToDoListComponent },
@@ -51,7 +52,7 @@ export class AppRoutingModule {}
 
 
 
-
+canActivate: [AdminGuard],
 
 route guard stuff
 
