@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./featured-artist-bar.component.css'],
 })
 export class FeaturedArtistBarComponent implements OnInit {
-  @Input() boi?: string;
+  @Input() boi?: string | null;
   constructor() {}
 
   ngOnInit(): void {}

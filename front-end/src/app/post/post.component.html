@@ -1,23 +1,50 @@
-<div class="card post-component">
-  <img
-    class="card-image-top post-image"
-    src="http://localhost:8090/image/{{post.post_id}}"
-    alt="post-image"
-  />
-  <div class="card-body post-content-holder">
-    <div class="card-title post-title"><h5>{{post.title}}</h5></div>
-    <div class="card-text post-description">
-      Posted by: {{post.poster.username}} {{post.posted}}<br/>
-      {{post.descript}}<br/>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img
+        class="card-image-top post-image"
+        src="http://localhost:8090/image/{{post.post_id}}"
+        alt="post-image"
+      />
     </div>
-    <div class="card-footer post-comment-holder">
-      <div class="like-dislike-container">
-        <button class="btn">Like | </button>
-        <button class="btn">Dislike</button>
+
+    <div class="col">
+      <div id="post-info">
+        <div class="row">
+          <div id="post-title"><h2>{{post.title}}</h2></div>
+        </div>
+
+        <div class="row">
+          <p>
+            <button class="btn btn-primary"><img class="like" src="./images/ThumbsUp.png" alt="Like"></button>
+            &nbsp; | &nbsp;
+            <button class="btn btn-danger"><img class="like" src="./images/ThumbsDown.png" alt="Dislike"></button>
+          </p>
+        </div>
+        
+        <div class="row">
+          <div id="user-info">
+            <div class="col">
+              Posted by: <a routerLink="/dashboard/:{{post.poster.user_id}}">{{post.poster.username}}</a>
+            </div>
+            <div class="col">
+              Date Posted: {{post.posted | date : 'short' }}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div id="post-description">
+            {{post.descript}}
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
 
 <!-- <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
