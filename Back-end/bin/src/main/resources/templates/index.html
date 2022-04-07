@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Main Page</title>
+</head>
+<body>
+	<div style="border-width: 2px;">
+		<h3>User Registeration</h3>
+		<form action="register" method="post" enctype="multipart/form-data">
+			Username: <input type="text" name="username" value="" /><br/><br/>
+			Password: <input type="password" name="password" value="" /><br/><br/>
+			First name: <input type="text" name="fname" value="" /><br/><br/>
+			Last name: <input type="text" name="lname" value="" /><br/><br/>
+			Email: <input type="email" name="email" value="" /><br/><br/>
+			Profile Picture: <input type="file" name="propic" /><br/><br/>
+			<button type="submit">Submit User</button>
+		</form>
+	</div>
+	
+	<div>
+		<h3>Post Creation</h3>
+		<form action="/post" method="post" enctype="multipart/form-data">
+			Title: <input type="text" name="title" value="" /> <br/><br/>
+			Description: <textarea name="descript" value=""></textarea> <br/><br/>
+			Image: <input type="file" name="photo" /> <br/><br/>
+			User ID: <input type="number" name="id" value="1" /><br/><br/>
+			<button type="submit">Submit Post</button>
+		</form>
+	</div>
+
+	<div>
+		<h3>Comment Creation</h3>
+		<form action="/comment" method="post" enctype="multipart/form-data">
+			User says:<br/><br/>
+			<textarea name="body" value=""></textarea> <br/><br/>
+			User ID: <input type="number" name="user_id" value="1"/><br/><br/>
+			Post ID: <input type="number" name="post_id" value="2"/><br/><br/>
+			<button type="submit">Submit Comment</button>
+		</form>
+	</div>
+	
+</body>
+</html>
