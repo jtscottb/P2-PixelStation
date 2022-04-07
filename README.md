@@ -1,1 +1,1 @@
-# P2-Pixel Station (Art Station Clone)
+# Project 2: Pixel Station

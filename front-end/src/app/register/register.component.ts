@@ -56,6 +56,7 @@ export class RegisterComponent implements OnInit {
       email: this.email,
       role: ''
     }
+    /*
     var success: boolean = this.userService.addUser(user);
     if(success) {
       this.showMessage = true;
@@ -66,6 +67,7 @@ export class RegisterComponent implements OnInit {
       this.text = 'text-danger';
       this.message = 'Username is already taken.';
     }
+    */
   }
 
 }
