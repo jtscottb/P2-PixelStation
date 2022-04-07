@@ -34,16 +34,20 @@ export class LoginComponent implements OnInit {
       this.showPwordMessage = true;
     }
     var booleans: boolean[] = [this.showUnameMessage, this.showPwordMessage];
-    this.userService.setUser(this.uname.toUpperCase(), this.pword);
-    this.route.navigate(['/dashboard']);
-    /*
-    if(this.user.username === '' && !booleans.includes(true)) {
-      this.showMessage = true;
-    } else if(!booleans.includes(true)) {
-      this.userService.setUser(this.uname, this.pword);
-      this.route.navigate(['/dashboard']);
-    }
-    */
+    this.userService.setUser(this.uname, this.pword)
+    setTimeout( () => this.route.navigate(['/dashboard']), 100)
+    /* this.userService.login(this.uname.toUpperCase(), this.pword).subscribe(
+      (obj: User) => {
+        this.user = obj;
+        if(obj == null) {
+          this.showMessage = true;
+        }
+        else {
+          // this.userService.setUser(this.user);
+          this.route.navigate(['/dashboard']);
+        }
+      }
+    ) */
   }
 
 }

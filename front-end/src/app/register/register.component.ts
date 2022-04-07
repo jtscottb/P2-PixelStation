@@ -52,17 +52,30 @@ export class RegisterComponent implements OnInit {
       user_id: 0,
       username: this.uname.toUpperCase(),
       password: this.pword,
-      fname: this.fname.toUpperCase(),
-      lname: this.lname.toUpperCase(),
+      fName: this.fname.toUpperCase(),
+      lName: this.lname.toUpperCase(),
       email: this.email
     }
     if(!booleans.includes(true)) {
-      this.userService.register(user).subscribe(obj => console.log(obj));
       this.showMessage = true;
+      this.userService.register(user).subscribe(
+        obj => {
+          console.log(obj);
+        }
+      );
       this.text = 'text-success';
       this.message = 'Successfully Registered. Please Login';
+      /* var success = this.userService.register(user);
+      if(success) {
+        this.showMessage = true;
+        this.text = 'text-success';
+        this.message = 'Successfully Registered. Please Login';
+      } else {
+        this.showMessage = true;
+        this.text = 'text-danger';
+        this.message = 'Username is already taken.';
+      } */
     } else {
-      this.showMessage = true;
       this.text = 'text-danger';
       this.message = 'Username is already taken.';
     }

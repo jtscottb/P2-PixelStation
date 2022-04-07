@@ -12,7 +12,7 @@ import { UserService } from '../services/user.service';
 export class PostComponent implements OnInit {
   postId: number = 6;
   post: Post = {post_id: 2, title: "Testing", 
-    poster: {user_id: 0, username: "CDawg", password: 'pass', fname:"Chris", lname:"Davis", email:"Jone@yahoo.com"}, 
+    poster: {user_id: 0, username: "CDawg", password: 'pass', fName:"Chris", lName:"Davis", email:"Jone@yahoo.com"}, 
     descript: "Just trying out how the post object looks.", likes: 0, dislikes: 0, posted: "1/6/2022"
   }
 
@@ -23,12 +23,8 @@ export class PostComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.getPost();
-  }
-
-  getPost() {
     const postId = Number(this.route.snapshot.paramMap.get('postId'));
-    this.postService.getPost(this.postId).subscribe( (obj: Post) => { this.post = obj });
+    this.postService.getPost(postId).subscribe( (obj: Post) => { this.post = obj });
   }
 
 }

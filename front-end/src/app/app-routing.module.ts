@@ -29,8 +29,10 @@ const routes: Routes = [
     component: AdminDashboardComponent,
     canActivate: [AdminGuard],
   },
-  { path: 'dashboard/:postId', component: PostComponent },
-  { path: 'user-profile', component: UserProfileComponent },
+  /* { path: 'dashboard/:postId', component: PostComponent },
+  { path: 'user-profile', component: UserProfileComponent }, */
+  { path: 'post/:postId', component: PostComponent },
+  { path: 'user-profile/:userId', component: UserProfileComponent },
   { path: 'palettes', component: PalettesComponent },
   { path: 'tutorials', component: TutorialsComponent },
   { path: 'about-us', component: AboutUsComponent },
