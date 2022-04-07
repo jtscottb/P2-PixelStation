@@ -30,6 +30,7 @@
   padding-bottom: 40vh;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .admin-button {
