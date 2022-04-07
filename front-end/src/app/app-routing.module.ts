@@ -40,6 +40,8 @@ export class AppRoutingModule {}
 
 /*
 
+
+
 route guard stuff
 
  { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard] },
