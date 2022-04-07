@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +20,7 @@ import { RandomArtBarComponent } from './random-art-bar/random-art-bar.component
 import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
 import { PostComponent } from './post/post.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { UserProfileNavComponent } from './user-profile-nav/user-profile-nav.component';
+
 import { UserProfileGalleryComponent } from './user-profile-gallery/user-profile-gallery.component';
 import { UserProfilePostComponent } from './user-profile-post/user-profile-post.component';
 import { UserService } from './services/user.service';
@@ -51,7 +51,7 @@ import { AdminNavHolderComponent } from './admin-nav-holder/admin-nav-holder.com
     RandomArtBarComponent,
     DashboardHeaderComponent,
     PostComponent,
-    UserProfileNavComponent,
+
     UserProfileComponent,
     UserProfileGalleryComponent,
     UserProfilePostComponent,
@@ -63,17 +63,16 @@ import { AdminNavHolderComponent } from './admin-nav-holder/admin-nav-holder.com
     AdminToDoListComponent,
     AdminControlComponent,
     AdminUserServiceComponent,
-    AdminNavHolderComponent
+    AdminNavHolderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [UserService, AuthenticationGuard, AdminGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}
