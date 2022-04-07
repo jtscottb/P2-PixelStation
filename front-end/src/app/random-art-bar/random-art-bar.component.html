@@ -3,7 +3,9 @@
   <br />
   <div class="art-holder-box-2">
     <div *ngFor="let thumbnail of thumbnails">
+      <a routerLink="/dashboard/{{ thumbnail.post_id }}">
         <app-thumbnail [post]="thumbnail"></app-thumbnail>
+      </a>
     </div>
   </div>
 </div>

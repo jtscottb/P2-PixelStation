@@ -25,7 +25,7 @@
         <div class="row">
           <div id="user-info">
             <div class="col">
-              Posted by: {{post.poster.username}}
+              Posted by: <a routerLink="/dashboard/:{{post.poster.user_id}}">{{post.poster.username}}</a>
             </div>
             <div class="col">
               Date Posted: {{post.posted | date : 'short' }}

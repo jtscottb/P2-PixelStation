@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard]},
   { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard]},
-  { path: 'post', component: PostComponent },
+  { path: 'dashboard/:postId', component: PostComponent },
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'palettes', component: PalettesComponent },
   { path: 'tutorials', component: TutorialsComponent },
