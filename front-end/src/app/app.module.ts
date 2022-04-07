@@ -29,6 +29,7 @@ import { AdminGuard } from './route-guard/admin.guard';
 import { PalettesComponent } from './palettes/palettes.component';
 import { PaletteDirectiveDirective } from './palette-directive.directive';
 import { TutorialsComponent } from './tutorials/tutorials.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { TutorialsComponent } from './tutorials/tutorials.component';
     UserProfilePostComponent,
     PalettesComponent,
     PaletteDirectiveDirective,
-    TutorialsComponent
+    TutorialsComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

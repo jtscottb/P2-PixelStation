@@ -11,9 +11,43 @@
   height: 100vh;
 }
 
+.nav-holder {
+  padding-top: 20px;
+}
+
 .header-section {
-  padding-top: 2%;
+  padding: 2%;
 }
 
 .forward-section {
+  padding: 2%;
+}
+
+.download-links {
+  padding: 2%;
+  background-color: var(--mydarkblue);
+}
+
+.youtube-links {
+  padding: 2%;
+  background-color: var(--mydarkblue2);
+}
+
+.youtuber {
+  padding: 2%;
+  padding-bottom: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--mytan);
+  transition: 0.3s;
+}
+
+a:hover {
+  color: white;
+  background-color: var(--mylavender);
+  transition: 0.3s;
+  transform: scale3d(1.05, 1.05, 1.05);
 }
