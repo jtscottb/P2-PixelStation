@@ -29,8 +29,12 @@ public class PostService {
 		pr.save(post);
 	}
 	
-	public boolean delete(Post post) {
-		pr.delete(post);
-		return pr.existsById(post.getPost_id());
+	public boolean delete(int id) {
+		pr.delete(pr.getById(id));
+		return !pr.existsById(id);
+	}
+
+	public List<Post> randomPosts(){
+		return pr.findRandomPosts();
 	}
 }

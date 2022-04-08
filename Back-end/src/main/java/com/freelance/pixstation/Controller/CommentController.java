@@ -33,16 +33,26 @@ public class CommentController {
 		return cs.findAll();
 	}
 	
-	@GetMapping("/comments/user/{id}")
+/* 	@GetMapping("/comments/user/{id}")
 	public List<Comment> getUserComments(@PathVariable Integer id){
 		return us.findById(id).getComments();
+	} */
+
+	@GetMapping("/comments/user/{id}")
+	public List<Comment> getUserComments(@PathVariable Integer id){
+		return cs.findByUser(us.findById(id));
 	}
+	
+/* 	@GetMapping("/comments/post/{id}")
+	public List<Comment> getPostComments(@PathVariable Integer id){
+		return ps.findById(id).getComments();
+	} */
 	
 	@GetMapping("/comments/post/{id}")
 	public List<Comment> getPostComments(@PathVariable Integer id){
-		return ps.findById(id).getComments();
+		return cs.findByPost(ps.findById(id));
 	}
-	
+
 	@PostMapping("/comment")
 	public Comment comment(@RequestParam String body, @RequestParam int user_id, @RequestParam int post_id) {
 		Comment com = new Comment();
@@ -67,7 +77,7 @@ public class CommentController {
 	
 	@DeleteMapping("/comment/{id}")
 	public boolean deleteComment(@PathVariable Integer id, @RequestBody Comment comment) {
-		return cs.delete(comment);
+		return cs.delete(id);
 	}
 
 }

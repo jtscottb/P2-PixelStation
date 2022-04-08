@@ -28,10 +28,18 @@ import com.freelance.pixstation.Service.UserService;
 public class UserController {
 	@Autowired
 	UserService us;
+
+	User currUser = null;
+	boolean loggedIn = false;
 	
 	@GetMapping("/users")
 	public List<User> getAll(){
 		return us.findAll();
+	}
+
+	@GetMapping("/users/rand")
+	public User getRand(){
+		return us.randUser();
 	}
 	
 	@GetMapping("/users/{id}")
@@ -47,8 +55,7 @@ public class UserController {
 	
 	@DeleteMapping("users/{id}")
 	public boolean deleteUser(@PathVariable Integer id) {
-		User delUser = us.findById(id);
-		return us.delete(delUser);
+		return us.delete(id);
 	}
 	
 	@GetMapping("/login")
@@ -56,6 +63,8 @@ public class UserController {
 		try {
 			User user = us.findByUsername(username);
 			if(user.getPassword().equals(password)) {
+				currUser = user;
+				loggedIn = true;
 				return user;
 			}else {
 				return null;
@@ -64,16 +73,39 @@ public class UserController {
 			return null;
 		}
 	}
+
+	@GetMapping("/currentUser")
+	public User currUser(){
+		return currUser;
+	}
+
+	@GetMapping("/logout")
+	public void logout(){
+		currUser = null;
+		loggedIn = false;
+	}
+	
+	@GetMapping("/loggedIn")
+	public boolean isLoggedIn(){
+		return loggedIn;
+	}
 	
 	@PostMapping("/register")
 	public User register(@RequestParam String username, @RequestParam String password, @RequestParam String fname,
 			@RequestParam String lname, @RequestParam String email, @RequestPart Part propic) {
+		try {
+			us.findByUsername(username);
+			return null;
+		}catch(EntityNotFoundException e) {
+			//If the catch block happens, username not taken
+		}
 		User user = new User();
 		user.setUsername(username);
 		user.setPassword(password);
 		user.setfName(fname);
 		user.setlName(lname);
 		user.setEmail(email);
+		user.setisAdmin(false);
 		Part pic = propic;
 		byte[] img = new byte[(int)pic.getSize()];
 		try {

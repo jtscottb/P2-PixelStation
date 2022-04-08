@@ -33,6 +33,8 @@ public class User {
 	private String lname;
 	@Column
 	private String email;
+	@Column
+	private boolean isAdmin;
 	@JsonIgnore
 	@Column
 	private byte[] proPic;
@@ -47,7 +49,7 @@ public class User {
 		
 	}
 
-	public User(Integer user_id, String username, String password, String fname, String lname, String email,
+	public User(Integer user_id, String username, String password, String fname, String lname, String email, boolean isAdmin,
 			byte[] proPic, List<Post> posts, List<Comment> comments) {
 		super();
 		this.user_id = user_id;
@@ -56,6 +58,7 @@ public class User {
 		this.fname = fname;
 		this.lname = lname;
 		this.email = email;
+		this.isAdmin = isAdmin;
 		this.proPic = proPic;
 		this.posts = posts;
 		this.comments = comments;
@@ -109,6 +112,14 @@ public class User {
 		this.email = email;
 	}
 
+	public boolean getisAdmin(){
+		return isAdmin;
+	}
+
+	public void setisAdmin(boolean status){
+		this.isAdmin = status;
+	}
+
 	public byte[] getProPic() {
 		return proPic;
 	}
@@ -136,7 +147,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [user_id=" + user_id + ", username=" + username + ", password=" + password + ", fName=" + fname
-				+ ", lName=" + lname + ", email=" + email + ", proPic=" + Arrays.toString(proPic) + ", posts=" + posts
+				+ ", lName=" + lname + ", email=" + email + ", isAdmin=" + isAdmin + ", proPic=" + Arrays.toString(proPic) + ", posts=" + posts
 				+ ", comments=" + comments + "]";
 	}
 

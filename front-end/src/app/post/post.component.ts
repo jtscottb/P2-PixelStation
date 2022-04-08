@@ -28,4 +28,14 @@ export class PostComponent implements OnInit {
       this.post = obj;
     });
   }
+
+  like(): void{
+    this.postService.likePost(this.post.post_id);
+    window.location.reload();
+  }
+
+  dislike(): void{
+    this.postService.dislikePost(this.post.post_id);
+    window.location.reload();
+  }
 }

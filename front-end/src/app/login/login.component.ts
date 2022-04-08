@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   uname: string = '';
   pword: string = '';
 
-  constructor(private userService : UserService,) { }
+  constructor(private userService : UserService) { }
 
   ngOnInit() {}
 

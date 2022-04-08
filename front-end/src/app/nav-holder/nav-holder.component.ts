@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-nav-holder',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavHolderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userSrv: UserService) { }
+
+  onClick(): void{
+    this.userSrv.logout();
+  }
 
   ngOnInit(): void {
   }

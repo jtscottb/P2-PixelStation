@@ -8,9 +8,15 @@ import { User } from '../user';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  user?: User = this.userService.currUser;
+  user?: User;
 
   constructor(private userService : UserService) {}
 
-  ngOnInit(): void {}
+  getCurrUser(): void{
+    this.userService.getCurrentUser().subscribe(user => this.user = user);
+  }
+
+  ngOnInit(): void {
+    this.getCurrUser();
+  }
 }
