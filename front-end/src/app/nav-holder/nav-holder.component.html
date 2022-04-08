@@ -6,7 +6,10 @@
       >
     </h5>
     <h5>
-      <a routerLink="/user-profile/{{ user.user_id }}" routerLinkActive="active" class="nav-link"
+      <a
+        routerLink="/user-profile/{{ user.user_id }}"
+        routerLinkActive="active"
+        class="nav-link"
         >my profile page</a
       >
     </h5>
@@ -25,10 +28,12 @@
         >about us</a
       >
     </h5>
-    <h5>
-      <a routerLink="/welcome" routerLinkActive="active" class="nav-link"
+
+    <!--       <a routerLink="/welcome" routerLinkActive="active" class="nav-link"
         >log out</a
-      >
+      > -->
+    <h5>
+      <a id="logout" class="nav-link" (click)="onClick()">log out</a>
     </h5>
   </nav>
 </div>

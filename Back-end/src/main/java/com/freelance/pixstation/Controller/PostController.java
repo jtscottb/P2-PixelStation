@@ -35,6 +35,11 @@ public class PostController {
 	public List<Post> posts() {
 		return ps.findAll();
 	}
+
+	@GetMapping("/posts/rand")
+	public List<Post> getRandPosts() {
+		return ps.randomPosts();
+	}
 	
 	@GetMapping("/posts/{id}")
 	public List<Post> postsByUser(@PathVariable int id){
@@ -51,6 +56,8 @@ public class PostController {
 		Post post = new Post();
 		post.setTitle(title);
 		post.setDescript(descript);
+		post.setLikes(0);
+		post.setDislikes(0);
 		Part pic = photo;
 		byte[] img = new byte[(int)pic.getSize()];
 		try {
@@ -77,8 +84,22 @@ public class PostController {
 	}
 	
 	@DeleteMapping("/post/{id}")
-	public Boolean deletePost(@PathVariable int id, @RequestBody Post post) {
-		return ps.delete(post);
+	public Boolean deletePost(@PathVariable int id) {
+		return ps.delete(id);
+	}
+
+	@GetMapping("/like/{id}")
+	public void like(@PathVariable int id){
+		Post temp = ps.findById(id);
+		temp.setLikes(temp.getLikes()+1);
+		ps.update(temp);
+	}
+
+	@GetMapping("/dislike/{id}")
+	public void dislike(@PathVariable int id){
+		Post temp = ps.findById(id);
+		temp.setDislikes(temp.getDislikes()+1);
+		ps.update(temp);
 	}
 	
 	@GetMapping(value = "/image/{id}", produces=MediaType.IMAGE_JPEG_VALUE)

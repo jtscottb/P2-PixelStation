@@ -8,6 +8,10 @@ import { Comment } from '../comment';
 })
 export class CommentService {
 
+  comment(data: FormData): Observable<Comment>{
+    return this.https.post<Comment>("http://localhost:8090/comment", data);
+  }
+
   getAll(): Observable<Comment[]>{
     return this.https.get<Comment[]>("http://localhost:8090/comments");
   }
@@ -27,7 +31,7 @@ export class CommentService {
   updateComment(id: number, com: Comment): Observable<Comment>{
     return this.https.put<Comment>("http://localhost:8090/comment/"+id, com);
   }
-//TODO: This function requires a backend change, wait before using it
+
   deleteComment(id: number): Observable<boolean>{
     return this.https.delete<boolean>("http://localhost:8090/comment/"+id);
   }
