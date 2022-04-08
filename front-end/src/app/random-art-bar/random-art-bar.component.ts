@@ -13,7 +13,7 @@ export class RandomArtBarComponent implements OnInit {
   constructor(private postSrv: PostService) { }
 
   getThums(): void{
-    this.postSrv.getAll().subscribe(posts => this.thumbnails = posts);
+    this.postSrv.getRandPosts().subscribe(posts => this.thumbnails = posts);
   }
 
   ngOnInit(): void {

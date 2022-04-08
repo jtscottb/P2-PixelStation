@@ -12,6 +12,10 @@ export class PostService {
     return this.https.get<Post[]>("http://localhost:8090/posts");
   }
 
+  getRandPosts(): Observable<Post[]>{
+    return this.https.get<Post[]>("http://localhost:8090/posts/rand")
+  }
+
   getUserPosts(id: number): Observable<Post[]>{
     return this.https.get<Post[]>("http://localhost:8090/posts/"+id);
   }
@@ -28,9 +32,16 @@ export class PostService {
     return this.https.post<Post>("http://localhost:8090/post", data);
   }
 
-//TODO: This function requires a backend change, wait before using it
   deletePost(id: number): Observable<boolean>{
     return this.https.delete<boolean>("http://localhost:8090/post/"+id);
+  }
+
+  likePost(id: number): void{
+    this.https.get("http://localhost:8090/like/"+id).subscribe();
+  }
+
+  dislikePost(id: number): void{
+    this.https.get("http://localhost:8090/dislike/"+id).subscribe();
   }
 
   constructor(private https: HttpClient) { }

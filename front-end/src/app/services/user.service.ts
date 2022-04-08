@@ -20,9 +20,17 @@ export class UserService {
   getUser(id: number): Observable<User>{ 
     return this.https.get<User>("http://localhost:8090/users/"+id);
   }
-
+  //TODO: Need to discuss what they can update
   updateUser(id: number, user: User): Observable<User>{ 
     return this.https.put<User>("http://localhost:8090/users/"+id, user);
+  }
+
+  getCurrentUser(): Observable<User>{
+    return this.https.get<User>("http://localhost:8090/currentUser");
+  }
+
+  getLoggedIn(): Observable<boolean>{
+    return this.https.get<boolean>("http://localhost:8090/loggedIn");
   }
 
   registerUser(data: FormData): Observable<User>{ 
@@ -36,9 +44,16 @@ export class UserService {
   login(username: string, password: string): Observable<User>{
     return this.https.get<any>("http://localhost:8090/login?username="+username+"&password="+password);
   }
-  
+
+  logout(): void{
+    this.https.get("http://localhost:8090/logout").subscribe(()=> this.route.navigate(['/welcome']));
+  }
+
   setUser(username: string, password: string): void{
     this.login(username, password).subscribe(user => {this.currUser = user; this.route.navigate(['/dashboard'])});
   }
 
+  getRand(): Observable<User>{
+    return this.https.get<User>("http://localhost:8090/users/rand");
+  }
 }

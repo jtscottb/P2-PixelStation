@@ -22,4 +22,14 @@ export class PostComponent implements OnInit {
     const postId = Number(this.route.snapshot.paramMap.get('postId'));
     this.postService.getPost(postId).subscribe( (obj: Post) => { this.post = obj });
   }
+
+  like(): void{
+    this.postService.likePost(this.post.post_id);
+    window.location.reload();
+  }
+
+  dislike(): void{
+    this.postService.dislikePost(this.post.post_id);
+    window.location.reload();
+  }
 }

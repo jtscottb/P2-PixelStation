@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.freelance.pixstation.Model.Comment;
+import com.freelance.pixstation.Model.Post;
+import com.freelance.pixstation.Model.User;
 import com.freelance.pixstation.repo.CommentRepo;
 
 @Service
@@ -15,6 +17,14 @@ public class CommentService {
 	
 	public List<Comment> findAll(){
 		return cr.findAll();
+	}
+
+	public List<Comment> findByPost(Post post){
+		return cr.findByOrigin(post);
+	}
+
+	public List<Comment> findByUser(User user){
+		return cr.findByAuthor(user);
 	}
 	
 	public Comment findById(int id){
@@ -29,8 +39,8 @@ public class CommentService {
 		cr.save(com);
 	}
 	
-	public boolean delete(Comment com) {
-		cr.delete(com);
-		return cr.existsById(com.getCom_id());
+	public boolean delete(int id) {
+		cr.delete(cr.getById(id));
+		return !cr.existsById(id);
 	}
 }

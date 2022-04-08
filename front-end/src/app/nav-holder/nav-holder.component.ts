@@ -8,14 +8,20 @@ import { User } from '../user';
   styleUrls: ['./nav-holder.component.css']
 })
 export class NavHolderComponent implements OnInit {
-  user: User = this.userService.currUser;
+  user!: User;
 
-  constructor(
-    private userService: UserService
-    ) { }
+  constructor(private userSrv: UserService) { }
+
+  onClick(): void{
+    this.userSrv.logout();
+  }
+
+  getCurrUser(): void{
+    this.userSrv.getCurrentUser().subscribe(user => this.user = user);
+  }
 
   ngOnInit(): void {
-    // this.userService.getCurrUser().subscribe( (obj: User) => {this.user = obj} )
+    this.getCurrUser();
   }
 
 }
