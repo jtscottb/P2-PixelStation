@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Post } from '../post';
 import { PostService } from '../services/post.service';
+import { UserService } from '../services/user.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user-profile-gallery',
@@ -11,17 +12,18 @@ import { PostService } from '../services/post.service';
 export class UserProfileGalleryComponent implements OnInit {
 
   thumbnails?: Post[];
+  user?: User = this.userService.currUser;
 
-  constructor(private postSrv: PostService) { }
+  constructor(private postSrv: PostService, private userService: UserService) { }
 
   getThums(): void{
-    this.postSrv.getUserPosts().subscribe(posts => this.thumbnails = posts);
+    if (this.user) {
+      this.postSrv.getUserPosts(this.user.user_id).subscribe(posts => this.thumbnails = posts);
+    }
   }
 
   ngOnInit(): void {
     this.getThums();
   }
-
-  deleteThumb(): void {}
 
 }
