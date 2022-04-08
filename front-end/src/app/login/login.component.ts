@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
     if (this.pword === '') {
       this.showPwordMessage = true;
     }
-    // this.userService.setUser(this.uname, this.pword);
     this.userService.login(this.uname, this.pword).subscribe(
       (obj: User) => {
         if(obj == null) {
