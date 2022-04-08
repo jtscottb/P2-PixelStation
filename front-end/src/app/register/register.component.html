@@ -71,7 +71,9 @@
     />
     <br /><br />
 
-    <input type="file" class="file-input" name="propic" (change)="onChange($event)" #fileUpload><br/>
+    <label for="propic">Choose a profile picture:</label><br />
+    <p class="text-danger" *ngIf="fileUpload.oninvalid || showFileMessage">Submit a profile picture</p>
+    <input type="file" class="file-input" name="propic" required (change)="onChange($event)" #fileUpload><br/>
 
     <button type="submit" (click)="onSubmit()">Register</button>
 </form>

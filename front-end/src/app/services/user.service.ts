@@ -36,6 +36,7 @@ export class UserService {
   login(username: string, password: string): Observable<User>{
     return this.https.get<any>("http://localhost:8090/login?username="+username+"&password="+password);
   }
+  
   setUser(username: string, password: string): void{
     this.login(username, password).subscribe(user => {this.currUser = user; this.route.navigate(['/dashboard'])});
   }

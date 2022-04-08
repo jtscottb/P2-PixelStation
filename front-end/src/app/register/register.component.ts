@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   showFnameMessage: boolean = false;
   showLnameMessage: boolean = false;
   showEmailMessage: boolean = false;
+  showFileMessage: boolean = false;
   uname: string = '';
   pword: string = '';
   fname: string = '';
@@ -33,6 +34,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.file);
     this.showMessage = false;
     this.showUnameMessage = false;
     this.showPwordMessage = false;
@@ -54,13 +56,18 @@ export class RegisterComponent implements OnInit {
     if(this.email == '') {
       this.showEmailMessage = true;
     }
-    
-    this.data.append("username", this.uname);
-    this.data.append("password", this.pword);
-    this.data.append("fname", this.fname);
-    this.data.append("lname", this.lname);
-    this.data.append("email", this.email);
-    this.userService.registerUser(this.data).subscribe(()=>this.userService.setUser(this.uname, this.pword));
+    if(this.file.size == 0) {
+      this.showFileMessage = true;
+    }
+    var booelans: boolean[] = [this.showUnameMessage, this.showPwordMessage, this.showFnameMessage, this.showLnameMessage, this.showEmailMessage];
+    if(!booelans.includes(true)) {
+      this.data.append("username", this.uname);
+      this.data.append("password", this.pword);
+      this.data.append("fname", this.fname);
+      this.data.append("lname", this.lname);
+      this.data.append("email", this.email);
+      this.userService.registerUser(this.data).subscribe( ()=> this.userService.setUser(this.uname, this.pword) );
+    }
   }
 
 }
