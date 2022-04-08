@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-register',
@@ -34,7 +35,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.file);
     this.showMessage = false;
     this.showUnameMessage = false;
     this.showPwordMessage = false;
@@ -66,7 +66,20 @@ export class RegisterComponent implements OnInit {
       this.data.append("fname", this.fname);
       this.data.append("lname", this.lname);
       this.data.append("email", this.email);
-      this.userService.registerUser(this.data).subscribe( ()=> this.userService.setUser(this.uname, this.pword) );
+      // this.userService.registerUser(this.data).subscribe( () => this.userService.setUser(this.uname, this.pword) );
+      this.userService.registerUser(this.data).subscribe(
+        (obj: User) => {
+          this.showMessage = true;
+          if(obj == null) {
+            this.message = 'Registration failed! Try again.';
+            this.text = 'text-danger';
+          } else {
+            this.message = 'Registration successful! Please log in.';
+            this.text = 'text-success';
+            // this.userService.setUser(this.uname, this.pword);
+          }
+        }
+      );
     }
   }
 
