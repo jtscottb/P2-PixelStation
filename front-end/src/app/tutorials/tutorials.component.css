@@ -16,7 +16,7 @@
 }
 
 .header-section {
-  padding: 2%;
+  padding-top: 2%;
 }
 
 .forward-section {
@@ -34,8 +34,7 @@
 }
 
 .youtuber {
-  padding: 2%;
-  padding-bottom: 0;
+  padding: 1.5%;
 }
 
 a {

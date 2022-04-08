@@ -1,9 +1,17 @@
 <h2>Register</h2>
 <p [class]="text" *ngIf="showMessage">{{ message }}</p>
 <form class="form">
-    <label for="username">Username:</label><br />
-    <p class="text-danger" *ngIf="username.invalid && (username.dirty || username.touched) || showUnameMessage">Username is required</p>
-    <input
+  <label for="username">Username:</label><br />
+  <p
+    class="text-danger"
+    *ngIf="
+      (username.invalid && (username.dirty || username.touched)) ||
+      showUnameMessage
+    "
+  >
+    Username is required
+  </p>
+  <input
     type="text"
     id="uname"
     name="username"
@@ -11,15 +19,20 @@
     [(ngModel)]="uname"
     #username="ngModel"
     required
-    />
-    <br />
+  />
+  <br />
 
-    <label for="password">Password:</label><br />
-    <div class="text-danger" *ngIf= "showPwordMessage || (password.dirty || password.touched)">
-        <p *ngIf="password.errors?.['required']">Password is required</p>
-        <p *ngIf="password.errors?.['minlength']">Password must be 4 characters minumum</p>
-    </div>
-    <input
+  <label for="password">Password:</label><br />
+  <div
+    class="text-danger"
+    *ngIf="showPwordMessage || password.dirty || password.touched"
+  >
+    <p *ngIf="password.errors?.['required']">Password is required</p>
+    <p *ngIf="password.errors?.['minlength']">
+      Password must be 4 characters minumum
+    </p>
+  </div>
+  <input
     type="password"
     id="pword"
     name="password"
@@ -28,12 +41,20 @@
     minlength="4"
     [(ngModel)]="pword"
     #password="ngModel"
-    />
-    <br />
+  />
+  <br />
 
-    <label for="fname">First Name:</label><br />
-    <p class="text-danger" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched) || showFnameMessage">First name is required</p>
-    <input
+  <label for="fname">First Name:</label><br />
+  <p
+    class="text-danger"
+    *ngIf="
+      (firstName.invalid && (firstName.dirty || firstName.touched)) ||
+      showFnameMessage
+    "
+  >
+    First name is required
+  </p>
+  <input
     type="text"
     id="fname"
     name="fname"
@@ -41,12 +62,20 @@
     required
     [(ngModel)]="fname"
     #firstName="ngModel"
-    />
-    <br />
+  />
+  <br />
 
-    <label for="lname">Last Name:</label><br />
-    <p class="text-danger" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched) || showLnameMessage">Last name is required</p>
-    <input
+  <label for="lname">Last Name:</label><br />
+  <p
+    class="text-danger"
+    *ngIf="
+      (lastName.invalid && (lastName.dirty || lastName.touched)) ||
+      showLnameMessage
+    "
+  >
+    Last name is required
+  </p>
+  <input
     type="text"
     id="lname"
     name="lname"
@@ -54,26 +83,44 @@
     required
     [(ngModel)]="lname"
     #lastName="ngModel"
-    />
-    <br />
+  />
+  <br />
 
-    <label for="email">Email:</label><br />
-    <p class="text-danger" *ngIf="Email.invalid && (Email.dirty || Email.touched) || showEmailMessage">Enter a valid Email</p>
-    <input
+  <label for="email">Email:</label><br />
+  <p
+    class="text-danger"
+    *ngIf="
+      (Email.invalid && (Email.dirty || Email.touched)) || showEmailMessage
+    "
+  >
+    Enter a valid Email
+  </p>
+  <input
     type="email"
     id="email"
     name="email"
     placeholder="user@email.com"
     required
-    ngModel email
+    ngModel
+    email
     [(ngModel)]="email"
     #Email="ngModel"
-    />
-    <br /><br />
+  />
+  <br /><br />
 
-    <label for="propic">Choose a profile picture:</label><br />
-    <p class="text-danger" *ngIf="fileUpload.oninvalid || showFileMessage">Submit a profile picture</p>
-    <input type="file" class="file-input" name="propic" required (change)="onChange($event)" #fileUpload><br/>
+  <label for="propic">Choose a profile picture:</label><br />
+  <p class="text-danger" *ngIf="fileUpload.oninvalid || showFileMessage">
+    Submit a profile picture
+  </p>
 
-    <button type="submit" (click)="onSubmit()">Register</button>
+  <input
+    type="file"
+    class="file-input"
+    name="propic"
+    required
+    (change)="onChange($event)"
+    #fileUpload
+  /><br />
+
+  <button type="submit" (click)="onSubmit()">Register</button>
 </form>

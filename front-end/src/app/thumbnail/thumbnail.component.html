@@ -10,15 +10,8 @@
         <h5>{{ post.title }}</h5>
       </div>
       <div class="card-text post-description">
-        By: {{ post.poster.username }} {{ post.posted | date: "shortDate"
-        }}<br />
-        {{ post.descript }}<br />
-      </div>
-      <div class="card-footer post-comment-holder">
-        <div class="like-dislike-container">
-          <button class="btn like-btn">Like</button>
-          <button class="btn dislike-btn">Dislike</button>
-        </div>
+        By: {{ post.poster.username }} {{ post.posted | date: "shortDate" }}
+        <br />
       </div>
     </div>
   </div>
