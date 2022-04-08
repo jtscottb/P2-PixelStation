@@ -1,5 +1,4 @@
 <h5>Comments:</h5>
 <div *ngFor="let comment of comments">
-    <p>{{comment.created | date:"shortDate"}} {{comment.author.username}} says:</p><br/>
-    <textarea value="{{comment.body}}" readonly></textarea>
+    <p>{{comment.created | date:"shortDate"}} {{comment.author.username}} says:&emsp;{{comment.body}}</p>
 </div>
