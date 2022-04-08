@@ -8,15 +8,12 @@ body {
   color: #ffaec8;
 }
 
-.container {
-  height: 100%;
-  width: 100%;
-  vertical-align: middle;
+.container-fluid {
   background-color: #053158;
 }
 
 .col {
-  width: 50%;
+  width: 33%;
   float: left;
   padding: 1%;
 }
@@ -42,7 +39,7 @@ body {
 }
 
 #user-info {
-
+  
 }
 
 .like {
@@ -58,5 +55,11 @@ body {
   border-radius: 15px;
   padding: 5%;
   display: inline-block;
-  height: 300px;
+  height: 350px;
+}
+
+.overflow-auto {
+  height: 672px;
+  width: 100%;
+  text-align: left;
 }
