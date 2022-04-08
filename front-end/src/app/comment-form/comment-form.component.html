@@ -1,0 +1,5 @@
+<h6>Say something:</h6>
+<form>
+    <textarea name="body" [(ngModel)]="body" #text="ngModel" required></textarea><br/>
+    <button type="submit" (click)="onSubmit()" class="btn btn-primary">Post Comment</button>
+</form>

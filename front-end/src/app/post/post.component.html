@@ -4,7 +4,7 @@
     <div class="col">
       <img
         class="card-image-top post-image"
-        src="http://localhost:8090/image/{{ post.post_id }}"
+        src="http://localhost:8090/image/{{post.post_id}}"
         alt="post-image"
       />
     </div>
@@ -19,15 +19,17 @@
 
         <div class="row">
           <p>
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" (click)="like()">
               <img class="like" src="../../assets/ThumbsUp.png" alt="Like">
               Like
             </button>
+            {{post.likes}}
             &nbsp; | &nbsp;
-            <button class="btn btn-danger">
+            <button class="btn btn-danger" (click)="dislike()">
               <img class="like" src="../../assets/ThumbsDown.png" alt="Dislike">
               Dislike
             </button>
+            {{post.dislikes}}
           </p>
         </div>
 
@@ -55,6 +57,10 @@
         
       </div>
     </div>
+  </div>
+  <div class="col">
+    <app-comment-form [post_id] = "post.post_id"></app-comment-form>
+    <app-view-comments [post_id] = "post.post_id"></app-view-comments>
   </div>
 </div>
 

@@ -3,5 +3,6 @@ export interface User {
     username: string,
     fName: string,
     lName: string,
-    email: string
+    email: string,
+    isAdmin: boolean
 }

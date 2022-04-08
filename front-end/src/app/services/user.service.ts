@@ -23,14 +23,22 @@ export class UserService {
   getUser(id: number): Observable<User>{ 
     return this.https.get<User>("http://localhost:8090/users/"+id);
   }
-
+  //TODO: Need to discuss what they can update
   updateUser(id: number, user: User): Observable<User>{ 
     return this.https.put<User>("http://localhost:8090/users/"+id, user);
   }
 
-  registerUser(data: FormData): Observable<User>{
+  getCurrentUser(): Observable<User>{
+    return this.https.get<User>("http://localhost:8090/currentUser");
+  }
+
+  getLoggedIn(): Observable<boolean>{
+    return this.https.get<boolean>("http://localhost:8090/loggedIn");
+  }
+
+  registerUser(data: FormData): Observable<User>{ 
     return this.https.post<User>("http://localhost:8090/register", data).pipe(
-      catchError(this.handleError<User>('registerUser')) 
+      catchError(this.handleError<User>('register')) 
     );
   }
 
@@ -43,7 +51,11 @@ export class UserService {
       catchError(this.handleError<User>('login')) 
     );
   }
-  
+
+  logout(): void{
+    this.https.get("http://localhost:8090/logout").subscribe(()=> this.route.navigate(['/welcome']));
+  }
+
   setUser(username: string, password: string): void{
     this.login(username, password).subscribe(user => {this.currUser = user; this.route.navigate(['/dashboard'])});
   }
@@ -59,4 +71,7 @@ export class UserService {
     };
   }
 
+  getRand(): Observable<User>{
+    return this.https.get<User>("http://localhost:8090/users/rand");
+  }
 }

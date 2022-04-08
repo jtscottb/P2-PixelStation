@@ -36,6 +36,8 @@ import { AdminToDoListComponent } from './admin-to-do-list/admin-to-do-list.comp
 import { AdminControlComponent } from './admin-control/admin-control.component';
 import { AdminUserServiceComponent } from './admin-user-service/admin-user-service.component';
 import { AdminNavHolderComponent } from './admin-nav-holder/admin-nav-holder.component';
+import { CommentFormComponent } from './comment-form/comment-form.component';
+import { ViewCommentsComponent } from './view-comments/view-comments.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { AdminNavHolderComponent } from './admin-nav-holder/admin-nav-holder.com
     AdminControlComponent,
     AdminUserServiceComponent,
     AdminNavHolderComponent,
+    CommentFormComponent,
+    ViewCommentsComponent
   ],
   imports: [
     BrowserModule,
