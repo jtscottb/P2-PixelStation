@@ -28,12 +28,13 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminDashboardComponent,
+    canActivate: [AdminGuard],
   },
-  { path: 'dashboard/:postId', component: PostComponent },
-  { path: 'user-profile', component: UserProfileComponent },
+  { path: 'post/:postId', component: PostComponent },
+  { path: 'user-profile/:userId', component: UserProfileComponent },
   { path: 'palettes', component: PalettesComponent },
   { path: 'tutorials', component: TutorialsComponent },
-  {path: 'post-form', component: PostFormComponent},
+  { path: 'post-form', component: PostFormComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'admin-control', component: AdminControlComponent },
   { path: 'admin-to-do-list', component: AdminToDoListComponent },
@@ -50,7 +51,7 @@ export class AppRoutingModule {}
 
 
 
-canActivate: [AdminGuard],
+
 
 route guard stuff
 

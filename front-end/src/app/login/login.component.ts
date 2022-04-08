@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-login',
@@ -28,5 +29,16 @@ export class LoginComponent implements OnInit {
       this.showPwordMessage = true;
     }
     this.userService.setUser(this.uname, this.pword);
+   /*  this.userService.login(this.uname, this.pword).subscribe(
+      (obj: User) => {
+        if(obj == null) {
+          this.showMessage = true;
+        } else {
+          this.showMessage = false;
+          this.userService.setUser(this.uname, this.pword);
+        }
+        return this.showMessage;
+      }
+    ); */
   }
 }

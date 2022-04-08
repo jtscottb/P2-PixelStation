@@ -94,8 +94,12 @@ public class UserController {
 	public User register(@RequestParam String username, @RequestParam String password, @RequestParam String fname,
 			@RequestParam String lname, @RequestParam String email, @RequestPart Part propic) {
 		try {
-			us.findByUsername(username);
-			return null;
+			User temp = us.findByUsername(username);
+			if(temp != null){
+				if(temp.getUsername().equals(username)){
+					return null;
+				}
+			}
 		}catch(EntityNotFoundException e) {
 			//If the catch block happens, username not taken
 		}
