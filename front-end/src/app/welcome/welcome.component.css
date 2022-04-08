@@ -16,13 +16,12 @@
 
 
 .login-zone {
-  height: 100vh;
+  height: 100%;
   width: 25vw;
   margin-left: 5%;
   z-index: -1;
   background-color: grey;
   background: rgba(0, 0, 0, 0.2);
-
   filter: blur(0.5px);
   opacity: 0.9;
   transition: 0.2s;
@@ -35,10 +34,16 @@
   transition: 0.2s;
 }
 
+.login-zone:hover .login-form-holder {
+  transform: translateY(-18%);
+  transition: 0.5s ease;
+}
+
 .login-form-holder {
+  transition: 0.5s linear;
   position: relative;
   max-width: 25vw;
-  top: 30%;
+  top: 15%;
   translate: 0%, -50%;
   z-index: 1;
 }
@@ -61,4 +66,8 @@
 
 .nav-tabs {
   border-bottom: none;
+}
+
+.hidden {
+  display: none;
 }

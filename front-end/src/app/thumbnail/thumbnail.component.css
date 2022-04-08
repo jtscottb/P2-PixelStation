@@ -5,9 +5,22 @@
   color: var(--mygray);
 }
 
+a {
+  text-decoration: none;
+}
+
 .post-component {
   width: 18rem;
   cursor: pointer;
+  transition: 0.4s;
+  opacity: 0.95;
+}
+
+.post-component:hover {
+  transform: translateY(-8px);
+  transition: 0.4s;
+  opacity: 1;
+  border: 1px solid white;
 }
 
 .post-title h5 {
