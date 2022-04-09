@@ -12,9 +12,6 @@
   background-color: var(--mydarkblue);
 }
 
-.back-button {
-}
-
 .back-button button {
   color: var(--mydarkblue);
   position: fixed;
