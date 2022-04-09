@@ -22,7 +22,6 @@ import { PostComponent } from './post/post.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 import { UserProfileGalleryComponent } from './user-profile-gallery/user-profile-gallery.component';
-import { UserProfilePostComponent } from './user-profile-post/user-profile-post.component';
 import { UserService } from './services/user.service';
 import { AuthenticationGuard } from './route-guard/authentication.guard';
 import { AdminGuard } from './route-guard/admin.guard';
@@ -57,7 +56,6 @@ import { ViewCommentsComponent } from './view-comments/view-comments.component';
 
     UserProfileComponent,
     UserProfileGalleryComponent,
-    UserProfilePostComponent,
     ThumbnailComponent,
     PalettesComponent,
     PaletteDirectiveDirective,
@@ -69,7 +67,7 @@ import { ViewCommentsComponent } from './view-comments/view-comments.component';
     AdminUserServiceComponent,
     AdminNavHolderComponent,
     CommentFormComponent,
-    ViewCommentsComponent
+    ViewCommentsComponent,
   ],
   imports: [
     BrowserModule,

@@ -17,15 +17,3 @@
   padding-left: 30px;
   padding-right: 30px;
 }
-
-.thumbnail {
-  border: 2px solid black;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.thumbnail:hover {
-  border: 2px solid white;
-  transform: scale3d(1.1, 1.1, 1.1);
-  transition: 0.3s;
-}
