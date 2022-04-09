@@ -12,18 +12,23 @@ import { User } from '../user';
 export class UserProfileGalleryComponent implements OnInit {
 
   thumbnails?: Post[];
-  user?: User = this.userService.currUser;
+  user?: User;
 
   constructor(private postSrv: PostService, private userService: UserService) { }
 
   getThums(): void{
-    if (this.user) {
+    if(this.user){
       this.postSrv.getUserPosts(this.user.user_id).subscribe(posts => this.thumbnails = posts);
     }
   }
+  
+  getUser(): void{
+    this.userService.getCurrentUser().subscribe(user => {this.user = user; this.getThums()});
+  }
 
   ngOnInit(): void {
-    this.getThums();
+    this.getUser();
   }
+
 
 }

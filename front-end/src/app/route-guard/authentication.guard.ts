@@ -16,12 +16,13 @@ export class AuthenticationGuard implements CanActivate, CanActivateChild, CanDe
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(this.userService.currUser) {
+      return this.userService.getLoggedIn();
+/*       if(this.userService.getCurrentUser()) {
         return true;
       } else {
         this.route.navigate(['/welcome']);
       }
-      return false;
+      return false; */
   }
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,

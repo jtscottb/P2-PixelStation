@@ -10,10 +10,14 @@ import { User } from '../user';
   styleUrls: ['./featured-artist-bar.component.css'],
 })
 export class FeaturedArtistBarComponent implements OnInit {
-  user?: User = this.userSrv.currUser;
+  user?: User;
   thumbnails?: Post[];
   
   constructor(private postSrv: PostService, private userSrv: UserService) {}
+
+  getUser(): void{
+    this.userSrv.getRand().subscribe(user => {this.user = user; this.getThums()});
+  }
 
   getThums(): void{
     if(this.user){
@@ -22,6 +26,6 @@ export class FeaturedArtistBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getThums();
+    this.getUser();
   }
 }

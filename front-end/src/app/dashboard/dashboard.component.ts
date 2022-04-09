@@ -8,11 +8,15 @@ import { User } from '../user';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  user?: User = this.userService.currUser;
+  user?: User;
 
   constructor(private userService : UserService) {}
 
+  getCurrUser(): void{
+    this.userService.getCurrentUser().subscribe(user => this.user = user);
+  }
+
   ngOnInit(): void {
-    // this.userService.getCurrUser().subscribe( (obj: User) => {this.user = obj; return this.user;} )
+    this.getCurrUser();
   }
 }

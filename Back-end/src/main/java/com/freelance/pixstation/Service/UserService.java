@@ -33,9 +33,13 @@ public class UserService {
 		ur.save(user);
 	}
 	
-	public boolean delete(User user) {
-		ur.delete(user);
-		return ur.existsById(user.getUser_id());
+	public boolean delete(int id) {
+		ur.delete(ur.getById(id));
+		return !ur.existsById(id);
+	}
+
+	public User randUser(){
+		return ur.findByRandom();
 	}
 	 
 }

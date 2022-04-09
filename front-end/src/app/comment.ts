@@ -7,5 +7,5 @@ export interface Comment{
     body: string,
     author: User,
     origin: Post,
-    created: Time
+    created: string
 }
