@@ -10,6 +10,8 @@
     </div>
 
     <div class="col">
+      <!-- <button class="btn btn-success" *ngIf="show">Edit</button> -->
+      <button class="btn btn-danger" (click)="delete()" *ngIf="show">Delete</button>
       <div id="post-info">
         <div class="row">
           <div id="post-title">
@@ -19,18 +21,14 @@
 
         <div class="row">
           <p>
-            <button class="btn btn-primary" (click)="like()">
-              <img class="like" src="../../assets/ThumbsUp.png" alt="Like" />
+            <button class="btn btn-primary" (click)="like()" [disabled]="disable">
+              <img class="like" src="../../assets/ThumbsUp.png" alt="Like">
               Like
             </button>
             {{ post.likes }}
             &nbsp; | &nbsp;
-            <button class="btn btn-danger" (click)="dislike()">
-              <img
-                class="like"
-                src="../../assets/ThumbsDown.png"
-                alt="Dislike"
-              />
+            <button class="btn btn-danger" (click)="dislike()" [disabled]="disable">
+              <img class="like" src="../../assets/ThumbsDown.png" alt="Dislike">
               Dislike
             </button>
             {{ post.dislikes }}
@@ -61,6 +59,7 @@
 
     <div class="col">
       <app-comment-form [post_id]="post.post_id"></app-comment-form>
+      <br>
       <div class="overflow-auto">
         <app-view-comments [post_id]="post.post_id"></app-view-comments>
       </div>
