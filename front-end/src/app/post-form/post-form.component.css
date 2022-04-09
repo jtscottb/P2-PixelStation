@@ -1,3 +1,90 @@
-button, input, form, textarea {
-    color: black;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.post-form-container {
+  height: 100vh;
+  background-color: var(--mydarkblue);
+}
+
+.back-button {
+}
+
+.back-button button {
+  color: var(--mydarkblue);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  border: 2px solid var(--mybrown);
+  padding: 5px;
+  background-color: var(--mytan);
+  border-radius: 4px;
+}
+
+.back-button button:hover {
+  color: var(--mybrown);
+  background-color: var(--mydarkblue);
+  transition: 0.3s;
+}
+
+.form-holder {
+  background-color: var(--mydarkblue2);
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px solid var(--mygray);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.header {
+  padding-bottom: 10px;
+  font-size: 1.7rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.flex-item {
+  padding: 10px;
+}
+
+input[type="text"],
+textarea {
+  background-color: var(--mygray);
+  color: black;
+}
+
+#unique-padding {
+  padding-left: 120px;
+}
+
+.button {
+  transition: 0.3s;
+  margin: auto;
+
+  display: block;
+  height: 50px;
+  width: 140px;
+  background-color: var(--mydarkblue);
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.button:hover {
+  color: black;
+  transform: rotateX(360deg);
+  transition: 0.3s cubic-bezier(0.34, -0.09, 0.53, 1.33);
+  background-color: white;
+  border: 1px solid var(--mylavender);
 }

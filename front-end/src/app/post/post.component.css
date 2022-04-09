@@ -2,6 +2,10 @@ body {
   background-color: #053158;
 }
 
+.divider {
+  padding-top: 20px;
+}
+
 * {
   box-sizing: border-box;
   text-align: center;
@@ -39,11 +43,9 @@ body {
 }
 
 #post-title {
-  
 }
 
 #user-info {
-  
 }
 
 .like {
