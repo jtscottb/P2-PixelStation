@@ -10,6 +10,8 @@
     </div>
 
     <div class="col">
+      <button class="btn btn-success" *ngIf="show">Edit</button>
+      <button class="btn btn-danger" (click)="delete()" *ngIf="show">Delete</button>
       <div id="post-info">
         <div class="row">
           <div id="post-title">
