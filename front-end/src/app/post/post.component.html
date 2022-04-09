@@ -10,7 +10,7 @@
     </div>
 
     <div class="col">
-      <button class="btn btn-success" *ngIf="show">Edit</button>
+      <!-- <button class="btn btn-success" *ngIf="show">Edit</button> -->
       <button class="btn btn-danger" (click)="delete()" *ngIf="show">Delete</button>
       <div id="post-info">
         <div class="row">
@@ -21,13 +21,13 @@
 
         <div class="row">
           <p>
-            <button class="btn btn-primary" (click)="like()">
+            <button class="btn btn-primary" (click)="like()" [disabled]="disable">
               <img class="like" src="../../assets/ThumbsUp.png" alt="Like">
               Like
             </button>
             {{post.likes}}
             &nbsp; | &nbsp;
-            <button class="btn btn-danger" (click)="dislike()">
+            <button class="btn btn-danger" (click)="dislike()" [disabled]="disable">
               <img class="like" src="../../assets/ThumbsDown.png" alt="Dislike">
               Dislike
             </button>
