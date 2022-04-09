@@ -48,4 +48,8 @@ export class PostService {
     this.https.get("http://localhost:8090/dislike/"+id).subscribe();
   }
 
+  updatePost(id: number, post: Post): Observable<Post> {
+    return this.https.put<Post>("http://localhost:8090/post/"+id, post);
+  }
+
 }

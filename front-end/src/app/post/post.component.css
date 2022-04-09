@@ -64,6 +64,12 @@ body {
   height: 350px;
 }
 
+textarea {
+  text-align: left;
+  width: 90%;
+  height: 90%;
+}
+
 .overflow-auto {
   height: 672px;
   width: 100%;
