@@ -34,6 +34,10 @@
   max-height: auto;
 }
 
+.flex-item h3 {
+  font-size: 2rem;
+}
+
 .flex-item-text {
   display: flex;
   flex-direction: column;

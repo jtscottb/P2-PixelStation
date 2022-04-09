@@ -58,3 +58,27 @@
 .svg-2 {
   background-color: var(--mybrown);
 }
+
+.button {
+  transition: 0.3s;
+  margin: auto;
+  padding-top: 8px;
+  display: block;
+  height: 50px;
+  width: 120px;
+  background-color: var(--mydarkblue2);
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.button:hover {
+  transform: rotateZ(360deg);
+  transition: 0.3s cubic-bezier(0.34, -0.09, 0.53, 1.33);
+  background-color: white;
+  border: 1px solid black;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}

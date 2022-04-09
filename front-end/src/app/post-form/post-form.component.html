@@ -1,8 +1,58 @@
-<form class="form">
-    <label for="title">Title:</label><br/>
-    <input type="text" id="title" name="title" [(ngModel)]="title" #name="ngModel" required><br/>
-    <label for="descript">Description:</label><br/>
-    <textarea id="descript" name="descript" [(ngModel)]="descript" #description="ngModel" required></textarea><br/>
-    <input type="file" class="file-input" name="photo" (change)="onChange($event)" required #fileUpload><br/>
-    <button class="btn btn-primary" type="submit" (click)="onSubmit()">Make Post</button>
-</form>
+<div class="post-form-container">
+  <div class="back-button">
+    <a routerLink="/dashboard" routerLinkActive="active" class="nav-link"
+      ><button>Go Back</button></a
+    >
+  </div>
+  <div class="form-holder">
+    <div class="flex-container">
+      <div class="header flex-item">
+        <h1>Create New Post Here</h1>
+      </div>
+      <div>
+        <form class="form">
+          <div class="flex-item">
+            <label for="title">Post Title:</label><br />
+          </div>
+          <div class="flex-item">
+            <input
+              type="text"
+              id="title"
+              name="title"
+              [(ngModel)]="title"
+              #name="ngModel"
+              required
+            />
+          </div>
+          <div class="flex-item">
+            <label for="descript">Post Description:</label>
+          </div>
+          <div class="flex-item">
+            <textarea
+              id="descript"
+              name="descript"
+              [(ngModel)]="descript"
+              #description="ngModel"
+              required
+            ></textarea>
+          </div>
+          <div id="unique-padding" class="flex-item">
+            <input
+              type="file"
+              class="file-input"
+              name="photo"
+              (change)="onChange($event)"
+              required
+              #fileUpload
+            />
+          </div>
+          <div class="flex-item">
+            <button class="button" type="submit" (click)="onSubmit()">
+              Make Post
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

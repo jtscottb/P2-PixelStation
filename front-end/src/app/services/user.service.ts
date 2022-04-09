@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from '../user';
 
@@ -11,7 +11,10 @@ export class UserService {
 
   currUser!: User;
 
-  constructor(private https: HttpClient, private route: Router) { }
+  constructor(
+    private https: HttpClient,
+    private route: Router
+    ) { }
 
   getAll(): Observable<User[]> {
     return this.https.get<User[]>("http://localhost:8090/users");
@@ -34,7 +37,9 @@ export class UserService {
   }
 
   registerUser(data: FormData): Observable<User>{ 
-    return this.https.post<User>("http://localhost:8090/register", data);
+    return this.https.post<User>("http://localhost:8090/register", data).pipe(
+      catchError(this.handleError<User>('register')) 
+    );
   }
 
   deleteUser(id: number): Observable<boolean>{ 
@@ -42,7 +47,9 @@ export class UserService {
   }
 
   login(username: string, password: string): Observable<User>{
-    return this.https.get<any>("http://localhost:8090/login?username="+username+"&password="+password);
+    return this.https.get<any>("http://localhost:8090/login?username="+username+"&password="+password).pipe(
+      catchError(this.handleError<User>('login')) 
+    );
   }
 
   logout(): void{
@@ -51,6 +58,17 @@ export class UserService {
 
   setUser(username: string, password: string): void{
     this.login(username, password).subscribe(user => {this.currUser = user; this.route.navigate(['/dashboard'])});
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+  
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+  
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
   }
 
   getRand(): Observable<User>{

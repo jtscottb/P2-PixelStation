@@ -1,10 +1,10 @@
-<app-nav-holder></app-nav-holder>
-<div class="container">
+<div class="container-fluid">
+  <div class="divider"><app-nav-holder></app-nav-holder></div>
   <div class="row">
     <div class="col">
       <img
         class="card-image-top post-image"
-        src="http://localhost:8090/image/{{post.post_id}}"
+        src="http://localhost:8090/image/{{ post.post_id }}"
         alt="post-image"
       />
     </div>
@@ -20,23 +20,30 @@
         <div class="row">
           <p>
             <button class="btn btn-primary" (click)="like()">
-              <img class="like" src="../../assets/ThumbsUp.png" alt="Like">
+              <img class="like" src="../../assets/ThumbsUp.png" alt="Like" />
               Like
             </button>
-            {{post.likes}}
+            {{ post.likes }}
             &nbsp; | &nbsp;
             <button class="btn btn-danger" (click)="dislike()">
-              <img class="like" src="../../assets/ThumbsDown.png" alt="Dislike">
+              <img
+                class="like"
+                src="../../assets/ThumbsDown.png"
+                alt="Dislike"
+              />
               Dislike
             </button>
-            {{post.dislikes}}
+            {{ post.dislikes }}
           </p>
         </div>
 
         <div class="row">
           <div id="user-info">
             <div class="col">
-              Posted by: <a routerLink="/user-profile/{{post.poster.user_id}}">{{post.poster.username}}</a>
+              Posted by:
+              <a routerLink="/user-profile/{{ post.poster.user_id }}">{{
+                post.poster.username
+              }}</a>
             </div>
             <div class="col">
               Date Posted: {{ post.posted | date: "short" }}
@@ -45,24 +52,18 @@
         </div>
 
         <div class="row">
-          <div id="post-description">
+          <div id="post-description" class="overflow-auto">
             {{ post.descript }}
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="col">
-    <app-comment-form [post_id] = "post.post_id"></app-comment-form>
-    <app-view-comments [post_id] = "post.post_id"></app-view-comments>
+
+    <div class="col">
+      <app-comment-form [post_id]="post.post_id"></app-comment-form>
+      <div class="overflow-auto">
+        <app-view-comments [post_id]="post.post_id"></app-view-comments>
+      </div>
+    </div>
   </div>
 </div>
-
-<!-- <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> -->

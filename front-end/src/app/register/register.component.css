@@ -14,3 +14,10 @@ button:hover {
   transition: 0.2s;
   transform: scale3d(1.1, 1.1, 1.1);
 }
+
+.file-input {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 60px;
+  padding-right: 0px;
+}

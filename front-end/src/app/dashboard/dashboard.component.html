@@ -1,9 +1,14 @@
 <div class="dashboard-content">
   <app-nav-holder></app-nav-holder>
   <div class="curve-divider-pink">
-    <app-dashboard-header *ngIf="user" [boi]="user.username"></app-dashboard-header>
-    <app-profile-picture  *ngIf="user" [id]="user.user_id"></app-profile-picture>
-    <a routerLink="/post-form" routerLinkActive="active" class="btn btn-primary"> Create Post </a>
+    <app-dashboard-header
+      *ngIf="user"
+      [boi]="user.username"
+    ></app-dashboard-header>
+    <app-profile-picture *ngIf="user" [id]="user.user_id"></app-profile-picture>
+    <a routerLink="/post-form" routerLinkActive="active" class="button">
+      Create Post
+    </a>
   </div>
   <div class="wave">
     <svg

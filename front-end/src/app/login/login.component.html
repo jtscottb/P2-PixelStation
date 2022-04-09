@@ -1,8 +1,18 @@
 <h2>Login</h2>
-<p class="text-danger" *ngIf="showMessage">Invalid username or password. Please try again</p>
-<form class="form">
+<p class="text-danger" *ngIf="showMessage">
+  Invalid username or password. Please try again
+</p>
+<form class="form" autocomplete="off">
   <label for="username">Username:</label><br />
-  <p class="text-danger" *ngIf="username.invalid && (username.dirty || username.touched) || showUnameMessage">Username is required</p>
+  <p
+    class="text-danger"
+    *ngIf="
+      (username.invalid && (username.dirty || username.touched)) ||
+      showUnameMessage
+    "
+  >
+    Username is required
+  </p>
   <input
     type="text"
     id="uname"
@@ -15,7 +25,15 @@
   <br />
 
   <label for="password">Password:</label><br />
-  <p class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched) || showPwordMessage">Password is required</p>
+  <p
+    class="text-danger"
+    *ngIf="
+      (password.invalid && (password.dirty || password.touched)) ||
+      showPwordMessage
+    "
+  >
+    Password is required
+  </p>
   <input
     type="password"
     id="pword"
