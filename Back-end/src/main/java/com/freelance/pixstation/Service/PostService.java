@@ -37,4 +37,8 @@ public class PostService {
 	public List<Post> randomPosts(){
 		return pr.findRandomPosts();
 	}
+
+	public List<Post> Top3Posts(int featured_id){
+		return pr.findTop3ByFeatured(featured_id);
+	}
 }
