@@ -48,7 +48,7 @@ public class PostController {
 
 	@GetMapping("/posts/top/{id}")
 	public List<Post> topPostsByUser(@PathVariable int id){
-		return us.findById(id).getPosts().subList(0, 3);
+		return ps.Top3Posts(id);
 	}
 	
 	@PostMapping("/post")

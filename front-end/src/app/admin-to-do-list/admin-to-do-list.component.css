@@ -22,17 +22,21 @@
 }
 
 .admin-holder {
-  border: 12px solid var(--mydarkblue);
+  border: 12px solid var(--mytan);
   background-color: var(--mylightblue);
   width: 90vw;
   margin: auto;
   margin-bottom: 30px;
   border-radius: 40px;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 40vh;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.admin-holder h2 {
+  color: var(--mydarkblue);
 }

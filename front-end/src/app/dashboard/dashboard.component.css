@@ -59,7 +59,7 @@
   background-color: var(--mybrown);
 }
 
-.button {
+.spin-button {
   transition: 0.3s;
   margin: auto;
   padding-top: 8px;
@@ -71,7 +71,7 @@
   border-radius: 5px;
 }
 
-.button:hover {
+.spin-button:hover {
   transform: rotateZ(360deg);
   transition: 0.3s cubic-bezier(0.34, -0.09, 0.53, 1.33);
   background-color: white;
