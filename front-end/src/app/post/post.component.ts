@@ -13,8 +13,13 @@ import { User } from '../user';
 export class PostComponent implements OnInit {
  @Input() post!: Post;
  currentUser!: User;
- show: boolean = false;
+ showDelete: boolean = false;
+ showEdit: boolean = false;
  disable: boolean = false;
+ title!: string;
+ description!: string;
+ showSubmit: boolean = false;
+
 
   constructor(
     private postService: PostService,
@@ -31,7 +36,10 @@ export class PostComponent implements OnInit {
         this.post = post;
         this.postService.currPost = post;
         if(this.currentUser.username == this.post.poster.username || this.currentUser.isAdmin) {
-          this.show = true;
+          this.showDelete = true;
+        }
+        if(this.currentUser.username == this.post.poster.username) {
+          this.showEdit = true;
         }
       }
     );
@@ -39,14 +47,12 @@ export class PostComponent implements OnInit {
 
   like(): void{
     this.postService.likePost(this.post.post_id);
-    // window.location.reload();
     this.post.likes += 1;
     this.disable = true;
   }
 
   dislike(): void{
     this.postService.dislikePost(this.post.post_id);
-    // window.location.reload();
     this.post.dislikes += 1;
     this.disable = true;
   }
@@ -57,6 +63,25 @@ export class PostComponent implements OnInit {
       status => {
         console.log(status ? 'Post deleted' : 'Delete failed');
         this.nav.navigate(['/dashboard']);
+      }
+    );
+  }
+
+  edit() {
+    this.showSubmit = true;
+  }
+
+  onSubmit() {
+    if(this.title != '') {
+      this.post.title = this.title;
+    }
+    if(this.description != '') {
+      this.post.descript = this.description;
+    }
+    this.postService.updatePost(this.post.post_id, this.post).subscribe(
+      (post: Post) => {
+        this.post = post;
+        this.showSubmit = false;
       }
     );
   }
