@@ -3,7 +3,39 @@
     <app-admin-nav-holder></app-admin-nav-holder>
   </div>
   <div class="admin-dashboard-header">
-    <h1>Welcome To Admin Control ((boi))!</h1>
+    <h1>Welcome To Admin Control {{admin.username}}!</h1>
   </div>
-  <div class="admin-holder"></div>
+  <div class="admin-holder">
+    <div class="header flex-item">
+      <h2>Exercise Authority With Caution</h2>
+    </div>
+
+    <form class="form">
+      <div class="flex-item">
+        <label for="post_id_delete"
+          >Enter Post ID You Would Like To Delete:</label
+        >
+      </div>
+
+      <div class="flex-item">
+        <input type="number" id="post_id_delete" name="post_id_delete" [(ngModel)]="post_id_delete" #delpId="ngModel" required/>
+      </div>
+      <div class="flex-item">
+        <button class="button" type="submit" (click)="deletePost()">Delete Post</button>
+      </div>
+
+      <div class="flex-item">
+        <label for="user_id_delete"
+          >Enter User ID You Would Like To Delete:</label
+        >
+      </div>
+
+      <div class="flex-item">
+        <input type="number" id="user_id_delete" name="user_id_delete" [(ngModel)]="user_id_delete" #deluId="ngModel" required/>
+      </div>
+      <div class="flex-item">
+        <button class="button" type="submit" (click)="deleteUser()">Delete User</button>
+      </div>
+    </form>
+  </div>
 </div>

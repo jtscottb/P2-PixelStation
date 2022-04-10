@@ -7,6 +7,6 @@
     </div>
   </div>
   <div class="featured-artist-link-holder">
-    <h5 *ngIf="user">Check out {{ user.username }}'s profile page <a href="#">here</a></h5>
+    <h5 *ngIf="user">Check out {{ user.username }}'s profile page <a routerLink="/user-profile/{{user.user_id}}" routerLinkActive="active">here</a></h5>
   </div>
 </div>

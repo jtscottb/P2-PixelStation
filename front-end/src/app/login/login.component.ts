@@ -34,6 +34,10 @@ export class LoginComponent implements OnInit {
         if(obj == null) {
           console.log(obj);
           this.showMessage = true;
+        }else if(obj.isAdmin){
+          this.showMessage = false;
+          this.userService.currUser = obj;
+          this.route.navigate(['/admin']);
         } else {
           this.showMessage = false;
           this.userService.currUser = obj;

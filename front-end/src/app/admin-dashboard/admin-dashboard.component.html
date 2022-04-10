@@ -1,6 +1,11 @@
 <div class="admin-dashboard-content">
+  <div class="back-button">
+    <a routerLink="/welcome" routerLinkActive="active" class="nav-link"
+      ><button>Log Out</button></a
+    >
+  </div>
   <div class="admin-dashboard-header">
-    <h1>Welcome To The Admin Dashboard ((boi))!</h1>
+    <h1>Welcome To The Admin Dashboard {{admin.username}}!</h1>
   </div>
   <div class="admin-buttons-holder">
     <a
@@ -19,7 +24,7 @@
       <div class="admin-button admin-control">
         <h2>Admin Controls</h2>
         <br />
-        <h4>Delete / Restore Content</h4>
+        <h4>Permanently Delete Content</h4>
         <br />
         <h5>(Or Whip Out the 'ole Ban Hammer)</h5>
       </div>
@@ -32,13 +37,8 @@
       <div class="admin-button view-user-info">
         <h2>General Info</h2>
         <br />
-        <h4>View / Edit User Information</h4>
+        <h4>View User / Post Information</h4>
       </div>
     </a>
-  </div>
-  <div class="log-out">
-    <a routerLink="/welcome" routerLinkActive="active" class="nav-link"
-      >Log Out</a
-    >
   </div>
 </div>

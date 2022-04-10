@@ -3,7 +3,30 @@
     <app-admin-nav-holder></app-admin-nav-holder>
   </div>
   <div class="admin-dashboard-header">
-    <h1>Welcome To Admin User Service ((boi))!</h1>
+    <h1>Welcome To Admin User Service {{admin.username}}!</h1>
   </div>
-  <div class="admin-holder"></div>
+  <div class="admin-holder">
+    <div class="header flex-item">
+      <h2>View All Users?</h2>
+    </div>
+
+    <form class="form">
+      <div class="flex-item">
+        <button class="button" type="submit" (click)="showUsers()">View Users</button>
+      </div>
+      <div *ngIf="viewUsers">
+        <p *ngFor="let user of users">ID: {{user.user_id}} Username: {{user.username}}</p><br/>
+      </div>
+      <div class="header flex-item">
+        <h2>View All Posts?</h2>
+      </div>
+
+      <div class="flex-item">
+        <button class="button" type="submit" (click)="showPosts()">View Posts</button>
+      </div>
+      <div *ngIf="viewPosts">
+        <p *ngFor="let post of posts">ID: {{post.post_id}} Title: {{post.title}} By: {{post.poster.username}}</p><br/>
+      </div>
+    </form>
+  </div>
 </div>

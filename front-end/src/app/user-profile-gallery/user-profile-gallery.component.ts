@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../post';
 import { PostService } from '../services/post.service';
-import { UserService } from '../services/user.service';
-import { User } from '../user';
+
 
 @Component({
   selector: 'app-user-profile-gallery',
@@ -11,15 +10,14 @@ import { User } from '../user';
 })
 export class UserProfileGalleryComponent implements OnInit {
 
-  thumbnails?: Post[];
-  user?: User = this.userService.currUser;
+  thumbnails: Post[] = [];
+  @Input() id: number = 0;
+  @Input() username: string = "";
 
-  constructor(private postSrv: PostService, private userService: UserService) { }
+  constructor(private postSrv: PostService) { }
 
   getThums(): void{
-    if (this.user) {
-      this.postSrv.getUserPosts(this.user.user_id).subscribe(posts => this.thumbnails = posts);
-    }
+    this.postSrv.getUserPosts(this.id).subscribe(posts => this.thumbnails = posts);
   }
 
   ngOnInit(): void {

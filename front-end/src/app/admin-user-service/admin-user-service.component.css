@@ -22,17 +22,45 @@
 }
 
 .admin-holder {
-  border: 12px solid var(--mytan);
+  border: 12px solid var(--mylightblue);
   background-color: var(--mylavender);
   width: 90vw;
   margin: auto;
   margin-bottom: 30px;
   border-radius: 40px;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-left: 50px;
   padding-right: 50px;
-  padding-bottom: 40vh;
+  padding-bottom: 8vh;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.header {
+  padding: 20px;
+}
+
+.flex-item {
+  padding: 10px;
+}
+
+.button {
+  transition: 0.3s;
+  margin: auto;
+  display: block;
+  height: 50px;
+  width: 140px;
+  background-color: var(--mydarkblue);
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.button:hover {
+  color: black;
+  transform: rotateZ(7deg);
+  transition: 0.3s cubic-bezier(0.34, -0.09, 0.53, 1.33);
+  background-color: white;
+  border: 1px solid var(--mylavender);
 }
