@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { User } from '../user';
 
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   uname: string = '';
   pword: string = '';
 
-  constructor(private userService : UserService) { }
+  constructor(private userService : UserService, private route : Router) { }
 
   ngOnInit() {}
 
@@ -28,17 +29,16 @@ export class LoginComponent implements OnInit {
     if (this.pword === '') {
       this.showPwordMessage = true;
     }
-    this.userService.setUser(this.uname, this.pword);
-   /*  this.userService.login(this.uname, this.pword).subscribe(
+    this.userService.login(this.uname, this.pword).subscribe(
       (obj: User) => {
-        if(obj == null) {
+        if(obj == null || obj == undefined) {
           this.showMessage = true;
         } else {
-          this.showMessage = false;
-          this.userService.setUser(this.uname, this.pword);
+          this.userService.currUser = obj;
+          this.route.navigate(['/dashboard']);
         }
         return this.showMessage;
       }
-    ); */
+    );
   }
 }

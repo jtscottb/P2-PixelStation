@@ -14,7 +14,7 @@
           <li class="nav-item">
             <button (click)="showRegister()" class="nav-link">Register</button>
           </li>
-          <li class="nav-item">
+          <li class="nav-item hidden">
             <button (click)="showAbout()" class="nav-link">About</button>
           </li>
           <li class="admin">
@@ -22,7 +22,7 @@
               >Admin Login</a
             >
           </li>
-          <li class="dashboard">
+          <li class="dashboard hidden">
             <a
               routerLink="/dashboard"
               routerLinkActive="active"
@@ -30,7 +30,7 @@
               >Dashboard</a
             >
           </li>
-          <li class="post">
+          <li class="post hidden">
             <a routerLink="/post" routerLinkActive="active" class="nav-link"
               >Post Object</a
             >

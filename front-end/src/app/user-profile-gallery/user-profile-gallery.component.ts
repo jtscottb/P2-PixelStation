@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Post } from '../post';
 import { PostService } from '../services/post.service';
 import { UserService } from '../services/user.service';
@@ -14,12 +15,18 @@ export class UserProfileGalleryComponent implements OnInit {
   thumbnails?: Post[];
   user?: User;
 
-  constructor(private postSrv: PostService, private userService: UserService) { }
+  constructor(
+    private postSrv: PostService,
+    private userService: UserService,
+    private route: ActivatedRoute
+  ) { }
 
   getThums(): void{
-    if(this.user){
+    const userId = Number(this.route.snapshot.paramMap.get('userId'));
+    this.postSrv.getUserPosts(userId).subscribe(posts => this.thumbnails = posts);
+    /* if (this.user) {
       this.postSrv.getUserPosts(this.user.user_id).subscribe(posts => this.thumbnails = posts);
-    }
+    } */
   }
   
   getUser(): void{

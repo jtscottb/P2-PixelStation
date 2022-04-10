@@ -8,6 +8,10 @@ import { Post } from '../post';
 })
 export class PostService {
 
+  currPost!: Post;
+
+  constructor(private https: HttpClient) { }
+
   getAll(): Observable<Post[]>{
     return this.https.get<Post[]>("http://localhost:8090/posts");
   }
@@ -44,5 +48,8 @@ export class PostService {
     this.https.get("http://localhost:8090/dislike/"+id).subscribe();
   }
 
-  constructor(private https: HttpClient) { }
+  updatePost(id: number, post: Post): Observable<Post> {
+    return this.https.put<Post>("http://localhost:8090/post/"+id, post);
+  }
+
 }

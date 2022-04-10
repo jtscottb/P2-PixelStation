@@ -1,42 +1,52 @@
-<app-nav-holder></app-nav-holder>
-<div class="container">
+<div class="container-fluid">
+  <div class="divider"><app-nav-holder></app-nav-holder></div>
   <div class="row">
     <div class="col">
       <img
         class="card-image-top post-image"
-        src="http://localhost:8090/image/{{post.post_id}}"
+        src="http://localhost:8090/image/{{ post.post_id }}"
         alt="post-image"
       />
     </div>
 
     <div class="col">
+      <button class="btn btn-dark" (click)="onSubmit()" *ngIf="showSubmit">Submit</button>
+      <button class="btn btn-success" (click)='edit()' *ngIf="showEdit">Edit</button>
+      <button class="btn btn-danger" (click)="delete()" *ngIf="showDelete">Delete</button>
       <div id="post-info">
         <div class="row">
-          <div id="post-title">
+          <div id="post-title" *ngIf="showSubmit == false">
             <h2>{{ post.title }}</h2>
+          </div>
+          <div id="post-title" *ngIf="showSubmit">
+            <label for="title">Title:</label>
+            <h2><input type="text" name="title" [(ngModel)]="title" placeholder="{{ post.title }}"></h2>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row" *ngIf="showSubmit == false">
           <p>
-            <button class="btn btn-primary" (click)="like()">
+            <button class="btn btn-primary" (click)="like()" [disabled]="disable">
               <img class="like" src="../../assets/ThumbsUp.png" alt="Like">
               Like
             </button>
-            {{post.likes}}
+            {{ post.likes }}
             &nbsp; | &nbsp;
-            <button class="btn btn-danger" (click)="dislike()">
+            <button class="btn btn-danger" (click)="dislike()" [disabled]="disable">
               <img class="like" src="../../assets/ThumbsDown.png" alt="Dislike">
               Dislike
             </button>
-            {{post.dislikes}}
+            {{ post.dislikes }}
           </p>
         </div>
 
-        <div class="row">
+        <div class="row" *ngIf="showSubmit == false">
           <div id="user-info">
             <div class="col">
-              Posted by: <a routerLink="/user-profile/{{post.poster.user_id}}">{{post.poster.username}}</a>
+              Posted by:
+              <a routerLink="/user-profile/{{ post.poster.user_id }}">{{
+                post.poster.username
+              }}</a>
             </div>
             <div class="col">
               Date Posted: {{ post.posted | date: "short" }}
@@ -45,24 +55,23 @@
         </div>
 
         <div class="row">
-          <div id="post-description">
+          <div id="post-description" class="overflow-auto" *ngIf="showSubmit == false">
             {{ post.descript }}
+          </div>
+          <div id="post-description" class="overflow-auto" *ngIf="showSubmit">
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" [(ngModel)]="description" placeholder="{{ post.descript }}"></textarea>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="col">
-    <app-comment-form [post_id] = "post.post_id"></app-comment-form>
-    <app-view-comments [post_id] = "post.post_id"></app-view-comments>
+
+    <div class="col">
+      <app-comment-form [post_id]="post.post_id"></app-comment-form>
+      <br>
+      <div class="overflow-auto">
+        <app-view-comments [post_id]="post.post_id"></app-view-comments>
+      </div>
+    </div>
   </div>
 </div>
-
-<!-- <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> -->

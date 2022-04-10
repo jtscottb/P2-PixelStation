@@ -15,7 +15,6 @@ export class ViewCommentsComponent implements OnInit {
 
   getComs(): void{
     if(this.post_id){
-      console.log("post id is:" + this.post_id);
       this.comSrv.getPostComments(this.post_id).subscribe(comments => this.comments = comments);
     }
   }
