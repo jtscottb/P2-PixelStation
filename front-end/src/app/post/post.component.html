@@ -10,34 +10,37 @@
     </div>
 
     <div class="col">
+      <button class="btn btn-dark" (click)="onSubmit()" *ngIf="showSubmit">Submit</button>
+      <button class="btn btn-success" (click)='edit()' *ngIf="showEdit">Edit</button>
+      <button class="btn btn-danger" (click)="delete()" *ngIf="showDelete">Delete</button>
       <div id="post-info">
         <div class="row">
-          <div id="post-title">
+          <div id="post-title" *ngIf="showSubmit == false">
             <h2>{{ post.title }}</h2>
+          </div>
+          <div id="post-title" *ngIf="showSubmit">
+            <label for="title">Title:</label>
+            <h2><input type="text" name="title" [(ngModel)]="title" placeholder="{{ post.title }}"></h2>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row" *ngIf="showSubmit == false">
           <p>
-            <button class="btn btn-primary" (click)="like()">
-              <img class="like" src="../../assets/ThumbsUp.png" alt="Like" />
+            <button class="btn btn-primary" (click)="like()" [disabled]="disable">
+              <img class="like" src="../../assets/ThumbsUp.png" alt="Like">
               Like
             </button>
             {{ post.likes }}
             &nbsp; | &nbsp;
-            <button class="btn btn-danger" (click)="dislike()">
-              <img
-                class="like"
-                src="../../assets/ThumbsDown.png"
-                alt="Dislike"
-              />
+            <button class="btn btn-danger" (click)="dislike()" [disabled]="disable">
+              <img class="like" src="../../assets/ThumbsDown.png" alt="Dislike">
               Dislike
             </button>
             {{ post.dislikes }}
           </p>
         </div>
 
-        <div class="row">
+        <div class="row" *ngIf="showSubmit == false">
           <div id="user-info">
             <div class="col">
               Posted by:
@@ -52,8 +55,12 @@
         </div>
 
         <div class="row">
-          <div id="post-description" class="overflow-auto">
+          <div id="post-description" class="overflow-auto" *ngIf="showSubmit == false">
             {{ post.descript }}
+          </div>
+          <div id="post-description" class="overflow-auto" *ngIf="showSubmit">
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" [(ngModel)]="description" placeholder="{{ post.descript }}"></textarea>
           </div>
         </div>
       </div>
@@ -61,6 +68,7 @@
 
     <div class="col">
       <app-comment-form [post_id]="post.post_id"></app-comment-form>
+      <br>
       <div class="overflow-auto">
         <app-view-comments [post_id]="post.post_id"></app-view-comments>
       </div>

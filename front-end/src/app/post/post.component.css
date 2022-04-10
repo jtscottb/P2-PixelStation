@@ -32,6 +32,10 @@ body {
   border-radius: 25px;
 }
 
+.btn {
+  color: white;
+}
+
 #post-info {
   text-align: center;
   vertical-align: middle;
@@ -60,8 +64,13 @@ body {
   height: 350px;
 }
 
+textarea {
+  text-align: left;
+  width: 90%;
+  height: 90%;
+}
+
 .overflow-auto {
   height: 672px;
   width: 100%;
-  text-align: left;
 }

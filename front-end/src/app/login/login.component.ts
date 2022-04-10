@@ -31,15 +31,13 @@ export class LoginComponent implements OnInit {
     }
     this.userService.login(this.uname, this.pword).subscribe(
       (obj: User) => {
-        if(obj == null) {
-          console.log(obj);
+        if(obj == null || obj == undefined) {
           this.showMessage = true;
         }else if(obj.isAdmin){
           this.showMessage = false;
           this.userService.currUser = obj;
           this.route.navigate(['/admin']);
         } else {
-          this.showMessage = false;
           this.userService.currUser = obj;
           this.route.navigate(['/dashboard']);
         }
