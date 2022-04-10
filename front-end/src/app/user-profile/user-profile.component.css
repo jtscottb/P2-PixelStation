@@ -17,6 +17,10 @@
     background-color: var(--mylavender);
 }
 
+.header-class h1 {
+  color: white;
+}
+
 .button-holder {
     padding: 1%;
 }
