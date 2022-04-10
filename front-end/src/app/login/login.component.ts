@@ -33,6 +33,10 @@ export class LoginComponent implements OnInit {
       (obj: User) => {
         if(obj == null || obj == undefined) {
           this.showMessage = true;
+        }else if(obj.isAdmin){
+          this.showMessage = false;
+          this.userService.currUser = obj;
+          this.route.navigate(['/admin']);
         } else {
           this.userService.currUser = obj;
           this.route.navigate(['/dashboard']);

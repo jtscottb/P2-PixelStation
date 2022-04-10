@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../post';
 import { PostService } from '../services/post.service';
-import { UserService } from '../services/user.service';
-import { User } from '../user';
+
 
 @Component({
   selector: 'app-user-profile-gallery',
@@ -12,21 +10,14 @@ import { User } from '../user';
 })
 export class UserProfileGalleryComponent implements OnInit {
 
-  thumbnails?: Post[];
-  user?: User = this.userService.currUser;
+  thumbnails: Post[] = [];
+  @Input() id: number = 0;
+  @Input() username: string = "";
 
-  constructor(
-    private postSrv: PostService,
-    private userService: UserService,
-    private route: ActivatedRoute
-  ) { }
+  constructor(private postSrv: PostService) { }
 
   getThums(): void{
-    const userId = Number(this.route.snapshot.paramMap.get('userId'));
-    this.postSrv.getUserPosts(userId).subscribe(posts => this.thumbnails = posts);
-    /* if (this.user) {
-      this.postSrv.getUserPosts(this.user.user_id).subscribe(posts => this.thumbnails = posts);
-    } */
+    this.postSrv.getUserPosts(this.id).subscribe(posts => this.thumbnails = posts);
   }
 
   ngOnInit(): void {

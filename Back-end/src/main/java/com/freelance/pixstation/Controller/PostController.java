@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.freelance.pixstation.Model.Comment;
 import com.freelance.pixstation.Model.Post;
+import com.freelance.pixstation.Service.CommentService;
 import com.freelance.pixstation.Service.PostService;
 import com.freelance.pixstation.Service.UserService;
 
@@ -30,6 +32,8 @@ public class PostController {
 	PostService ps;
 	@Autowired
 	UserService us;
+	@Autowired
+	CommentService cs;
 	
 	@GetMapping("/posts")
 	public List<Post> posts() {
@@ -85,6 +89,10 @@ public class PostController {
 	
 	@DeleteMapping("/post/{id}")
 	public Boolean deletePost(@PathVariable int id) {
+		List<Comment> comments = ps.findById(id).getComments();
+		for(Comment c: comments){
+			cs.delete(c.getCom_id());
+		}
 		return ps.delete(id);
 	}
 
