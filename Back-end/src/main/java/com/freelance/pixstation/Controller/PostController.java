@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -77,7 +76,10 @@ public class PostController {
 	}
 	
 	@PutMapping("/post/{id}")
-	public Post updatePost(@PathVariable int id, @RequestBody Post post) {
+	public Post updatePost(@PathVariable int id, @RequestParam String title, @RequestParam String descript) {
+		Post post = ps.findById(id);
+		post.setTitle(title);
+		post.setDescript(descript);
 		ps.update(post);
 		return ps.findById(id);
 	}
