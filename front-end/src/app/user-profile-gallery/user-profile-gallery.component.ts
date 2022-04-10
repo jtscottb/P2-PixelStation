@@ -19,13 +19,9 @@ export class UserProfileGalleryComponent implements OnInit {
   getThums(): void{
     this.postSrv.getUserPosts(this.id).subscribe(posts => this.thumbnails = posts);
   }
-  
-  getUser(): void{
-    this.userService.getCurrentUser().subscribe(user => {this.user = user; this.getThums()});
-  }
 
   ngOnInit(): void {
-    this.getUser();
+    this.getThums();
   }
 
 
