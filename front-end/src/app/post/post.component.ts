@@ -12,6 +12,7 @@ import { User } from '../user';
 })
 export class PostComponent implements OnInit {
  @Input() post!: Post;
+ data: FormData = new FormData();
  currentUser!: User;
  showDelete: boolean = false;
  showEdit: boolean = false;
@@ -73,12 +74,12 @@ export class PostComponent implements OnInit {
 
   onSubmit() {
     if(this.title != '') {
-      this.post.title = this.title;
+      this.data.append("title", this.title);
     }
     if(this.description != '') {
-      this.post.descript = this.description;
+      this.data.append("descript", this.title);
     }
-    this.postService.updatePost(this.post.post_id, this.post).subscribe(
+    this.postService.updatePost(this.post.post_id, this.data).subscribe(
       (post: Post) => {
         this.post = post;
         this.showSubmit = false;
