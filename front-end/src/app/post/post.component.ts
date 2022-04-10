@@ -31,7 +31,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit(): void {
     const postId = Number(this.route.snapshot.paramMap.get('postId'));
-    this.currentUser = this.userService.currUser;
+    this.getCurrUser();
     this.postService.getPost(postId).subscribe(
       (post: Post) => {
         this.post = post;
@@ -70,6 +70,10 @@ export class PostComponent implements OnInit {
 
   edit() {
     this.showSubmit = true;
+  }
+
+  getCurrUser(): void{
+    this.userService.getCurrentUser().subscribe(user => this.currentUser = user);
   }
 
   onSubmit() {
