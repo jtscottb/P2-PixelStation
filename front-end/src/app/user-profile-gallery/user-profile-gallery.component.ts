@@ -24,4 +24,5 @@ export class UserProfileGalleryComponent implements OnInit {
     this.getThums();
   }
 
+
 }
