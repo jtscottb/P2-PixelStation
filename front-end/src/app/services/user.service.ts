@@ -32,6 +32,10 @@ export class UserService {
     return this.https.get<User>("http://localhost:8090/currentUser");
   }
 
+  isAdmin(): Observable<boolean>{
+    return this.https.get<boolean>("http://localhost:8090/isAdmin");
+  }
+
   getLoggedIn(): Observable<boolean>{
     return this.https.get<boolean>("http://localhost:8090/loggedIn");
   }
@@ -57,7 +61,7 @@ export class UserService {
   }
 
   setUser(username: string, password: string): void{
-    this.login(username, password).subscribe(user => {this.currUser = user; this.route.navigate(['/dashboard'])});
+    this.login(username, password).subscribe(user => {this.currUser = user; if(user.isAdmin){this.route.navigate(['/admin'])}else{this.route.navigate(['/dashboard'])}});
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

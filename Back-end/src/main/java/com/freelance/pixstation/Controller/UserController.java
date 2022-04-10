@@ -20,7 +20,11 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.freelance.pixstation.Model.Comment;
+import com.freelance.pixstation.Model.Post;
 import com.freelance.pixstation.Model.User;
+import com.freelance.pixstation.Service.CommentService;
+import com.freelance.pixstation.Service.PostService;
 import com.freelance.pixstation.Service.UserService;
 
 @RestController
@@ -28,6 +32,10 @@ import com.freelance.pixstation.Service.UserService;
 public class UserController {
 	@Autowired
 	UserService us;
+	@Autowired
+	PostService ps;
+	@Autowired
+	CommentService cs;
 
 	User currUser = null;
 	boolean loggedIn = false;
@@ -55,6 +63,14 @@ public class UserController {
 	
 	@DeleteMapping("users/{id}")
 	public boolean deleteUser(@PathVariable Integer id) {
+		List<Comment> comments = us.findById(id).getComments();
+		for(Comment c: comments){
+			cs.delete(c.getCom_id());
+		}
+		List<Post> posts = us.findById(id).getPosts();
+		for(Post p: posts){
+			ps.delete(p.getPost_id());
+		}
 		return us.delete(id);
 	}
 	
@@ -77,6 +93,11 @@ public class UserController {
 	@GetMapping("/currentUser")
 	public User currUser(){
 		return currUser;
+	}
+
+	@GetMapping("/isAdmin")
+	public boolean isAdmin(){
+		return currUser.getisAdmin();
 	}
 
 	@GetMapping("/logout")
