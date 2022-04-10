@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -6,8 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./admin-dashboard.component.css'],
 })
 export class AdminDashboardComponent implements OnInit {
-  @Input() boi?: string;
-  constructor() {}
+  admin!:User;
+  
+  constructor(private userSrv: UserService) {}
 
-  ngOnInit(): void {}
+  getCurrUser(): void{
+    this.userSrv.getCurrentUser().subscribe(user => this.admin = user);
+  }
+
+  ngOnInit(): void {
+    this.getCurrUser();
+  }
 }

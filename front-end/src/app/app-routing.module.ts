@@ -23,11 +23,12 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [AuthenticationGuard],
+    canActivate: [AuthenticationGuard]
   },
   {
     path: 'admin',
     component: AdminDashboardComponent,
+    canActivate: [AdminGuard]
   },
   { path: 'post/:postId', component: PostComponent },
   { path: 'user-profile/:userId', component: UserProfileComponent },

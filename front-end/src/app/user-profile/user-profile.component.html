@@ -2,10 +2,11 @@
     <div class="nav-holder">
         <app-nav-holder></app-nav-holder>
     </div>
-    <div class="button-holder">
-        <a routerLink="/post-form" routerLinkActive="active" class="spin-button">
+    <app-profile-picture [id]="user.user_id"></app-profile-picture>
+    <!--   <div class="button-holder">
+    <a routerLink="/post-form" routerLinkActive="active" class="spin-button">
       Create Post
     </a>
-    </div>
-    <app-user-profile-gallery></app-user-profile-gallery>
+  </div> -->
+    <app-user-profile-gallery [id]="user.user_id" [username]="user.username"></app-user-profile-gallery>
 </div>
