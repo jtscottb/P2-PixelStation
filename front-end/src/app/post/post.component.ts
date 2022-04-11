@@ -35,7 +35,6 @@ export class PostComponent implements OnInit {
     this.postService.getPost(postId).subscribe(
       (post: Post) => {
         this.post = post;
-        this.postService.currPost = post;
         if(this.currentUser.username == this.post.poster.username || this.currentUser.isAdmin) {
           this.showDelete = true;
         }
@@ -81,7 +80,7 @@ export class PostComponent implements OnInit {
       this.data.append("title", this.title);
     }
     if(this.description != '') {
-      this.data.append("descript", this.title);
+      this.data.append("descript", this.description);
     }
     this.postService.updatePost(this.post.post_id, this.data).subscribe(
       (post: Post) => {
