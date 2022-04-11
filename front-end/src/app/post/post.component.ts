@@ -81,7 +81,7 @@ export class PostComponent implements OnInit {
       this.data.append("title", this.title);
     }
     if(this.description != '') {
-      this.data.append("descript", this.title);
+      this.data.append("descript", this.description);
     }
     this.postService.updatePost(this.post.post_id, this.data).subscribe(
       (post: Post) => {
