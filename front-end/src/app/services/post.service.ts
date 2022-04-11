@@ -8,8 +8,6 @@ import { Post } from '../post';
 })
 export class PostService {
 
-  currPost!: Post;
-
   constructor(private https: HttpClient) { }
 
   getAll(): Observable<Post[]>{

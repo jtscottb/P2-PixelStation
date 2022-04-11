@@ -35,7 +35,6 @@ export class PostComponent implements OnInit {
     this.postService.getPost(postId).subscribe(
       (post: Post) => {
         this.post = post;
-        this.postService.currPost = post;
         if(this.currentUser.username == this.post.poster.username || this.currentUser.isAdmin) {
           this.showDelete = true;
         }

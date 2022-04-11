@@ -29,20 +29,20 @@ export class LoginComponent implements OnInit {
     if (this.pword === '') {
       this.showPwordMessage = true;
     }
-    this.userService.login(this.uname, this.pword).subscribe(
-      (obj: User) => {
-        if(obj == null || obj == undefined) {
-          this.showMessage = true;
-        }else if(obj.isAdmin){
-          this.showMessage = false;
-          this.userService.currUser = obj;
-          this.route.navigate(['/admin']);
-        } else {
-          this.userService.currUser = obj;
-          this.route.navigate(['/dashboard']);
+    var booleans: boolean[] = [this.showUnameMessage, this.showPwordMessage];
+    if(!booleans.includes(true)) {
+      this.userService.login(this.uname, this.pword).subscribe(
+        (obj: User) => {
+          if(obj == null || obj == undefined) {
+            this.showMessage = true;
+          } else if(obj.isAdmin){
+            this.route.navigate(['/admin']);
+          } else {
+            this.route.navigate(['/dashboard']);
+          }
+          return this.showMessage;
         }
-        return this.showMessage;
-      }
-    );
+      );
+    }
   }
 }
